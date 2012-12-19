@@ -1,0 +1,38 @@
+"Challenge" = "挑战模式";
+"Free Mode" = "自由模式";
+"Score" = "排行榜";
+"More" = "更多游戏";
+"Back" = "返回";
+"Level Select" = "选择关卡";
+"Goal" = "目标";
+"Time" = "时间";
+"Start" = "开始";
+
+
+"Result" = "结果";
+"Mission %d" = "%d段";
+"Retry" = "重试";
+"High score!" = "恭喜!新记录!";
+"High score:" = "当前记录:";
+"Mission Complete!" = "目标达成！";
+"All Clear!!!" = "全部达成！！！";
+"Mission Failed!" = "挑战失败！";
+"Give Up" = "放弃";                   
+"Play Single" = "单手模式";
+"Play Double" = "双手模式";
+
+"Next Goal:" = "下一目标:";
+"Again" = "再来一次";
+"Close" = "关闭";
+"Next" = "下一关";
+"High:" = "最高分:";
+"TOUCH TO START" = "点击按钮开始游戏";
+"FINISH" = "结束";
+"ShareMsgNormal" = "我刚刚在 #轻击达人# 中点出了%d分! 敢来超越我吗? http://t.cn/zlKELvZ";
+"ShareMsgChellange" = "我刚刚在 #轻击达人# 中挑战成功第%d关! 你行吗? http://t.cn/zlKELvZ";
+"Come to challange highest score!" = "今天还没测试点击次数呢,快来测测吧.";
+"Your friend get a new higher score. Beat It!" = "你的朋友刚刚超过了你的分数,快来击败他.";
+
+"Review" = "评价";
+"ReviewMsg" = "恭喜您达成了新的成就!如果您喜欢我们的产品,请给个5星评价吧,您的肯定是让我们做的更好的最大动力,谢谢!";
+"GoReview" = "去评价";

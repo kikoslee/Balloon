@@ -1,0 +1,37 @@
+"fontNormal" = "Helvetica-Bold";
+
+"language" = "en";
+"Level Select" = "レベル選択";
+"Goal" = "目標";
+"Time" = "タイム";
+"Start" = "スタート";
+"Result" = "結果";
+"Mission %d" = "%d 段";
+"Retry" = "再挑戦";
+"High score!" = "おめでとう！新しい記録を取りました！";
+"High score:" = "現在の記録：";
+"Mission Complete!" = "目標は達成しました！";
+"All Clear!!!" = "目標は全て達成しました！！！";
+"Mission Failed!" = "失敗！";
+"Give Up" = "中止";
+"Play Single" = "単手モード";
+"Play Double" = "両手モード";
+"Chellange" = "達人☆挑戦";
+"Leaderboard" = "ランキング";
+"More Game" = "もっとのゲーム";
+"Next Goal:" = "次の目標:";
+"<< Back" = "<< 戻る";
+"Again" = "再挑戦";
+"Close" = "閉じる";
+"Next" = "次へ";
+"High:" = "トップ点数:";
+"TOUCH TO START" = "ボタンを押すと";
+"FINISH" = "終了";
+"ShareMsgNormal" = "さっき、「ヒット達人」で%d 点を獲得しました！大胆に私を超えに来ますか？http://itunes.apple.com/jp/app/tapburst-free/id439612162?mt=8";
+"ShareMsgChellange" = "さっき、「ヒット達人」で成功に第%d回を挑戦しました！君ができるか？ http://itunes.apple.com/jp/app/tapburst-free/id439612162?mt=8";
+"Come to challange highest score!" = "今日はまだ「ヒット達人」を試してないが、早く来るよ！";
+"Your friend get a new higher score. Beat It!" = "さっき、友達が君の点数を超えました。早く彼を打ち破るよ！";
+
+"Review" = "Review";
+"ReviewMsg" = "Thank you for you play our game! If you like TapBurst, please give us a 5 star, we are appreciate your review.";
+"GoReview" = "Go Review";
