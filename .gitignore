@@ -1,18 +1,4 @@
 
-.DS_Store
-
-01.src/.DS_Store
-
-.DS_Store
-
-01.src/proj.ios/zh-Hant.lproj/.DS_Store
-
-*.xcworkspacedata
-
-*.xcuserstate
-
-*.xcbkptlist
-
-*.xcscheme
-
-01.src/proj.ios/balloon.xcodeproj/xcuserdata/xiexianlin.xcuserdatad/xcschemes/xcschememanagement.plist
+*.DS_Store
+*.xcworkspace
+01.src/proj.ios/balloon.xcodeproj/xcuserdata/xiexianlin.xcuserdatad
