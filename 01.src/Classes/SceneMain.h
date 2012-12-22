@@ -28,11 +28,16 @@ public:
     virtual bool onAssignCCBMemberVariable(CCObject* pTarget, const char* pMemberVariableName, CCNode* pNode);
     virtual void onNodeLoaded(CCNode* pNode, CCNodeLoader* pNodeLoader);
     
+    virtual void registerWithTouchDispatcher();
+    virtual bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
+    virtual void ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent);
+    
 private:
     void onBtnBack(CCObject* pSender, CCControlEvent pCCControlEvent);
-    void onBtnTap(CCObject* pSender, CCControlEvent pCCControlEvent);
+    void onBtnRetry(CCObject* pSender, CCControlEvent pCCControlEvent);
     
     CCControlButton* mBtnBack;
+    CCControlButton* mBtnRetry;
 	CCLabelTTF* mTimeValue;		// 时间文本
 	CCLabelTTF* mFinish;		// 提示文字
 	CCLabelTTF* mTips;
@@ -40,6 +45,9 @@ private:
     CCLabelTTF* mLabelGoal;     // 目标标签
     CCLabelTTF* mLabelHigh;     // 最高分标签
     CCLayer* mLayerTimeBar;
+    CCLayer* mLayerAnimal;
+    CCSprite* mBtnMain;
+    CCSprite* mAnimal;
     
     CCProgressTimer* mTimeBar;
 	CCLabelAtlas* mScoreTotal;	// 分数文本
@@ -49,6 +57,8 @@ private:
     int mNextGoal;              // 下一次目标,初始为70/140,每级增加15~30,每个目标达成增加10秒
     int mCurrentLevel;          // 等级
     
+    CCTouch* mCurTouch;
+    bool mTouched;
     float mLastTime;
     float mLevelTime;
     float mCurrentTime;
@@ -61,10 +71,9 @@ private:
     void _back();
     void _restart();
     void _doTouch(int index, CCTouch* touch);
-    bool _checkTouch(CCSet *pTouches);
+    bool _checkTouch(CCTouch *pTouch);
     void _updateTimeBar();
     void _updateLevel();
-    int _containsTouchLocation(CCTouch* touch);
 };
 
 #endif

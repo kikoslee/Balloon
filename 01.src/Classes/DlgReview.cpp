@@ -1,122 +1,100 @@
-#include "PreHeader.h"
-#include "DialogReview.h"
-#include "HBUtilies.h"
+#include "DlgReview.h"
 #include "GlobalData.h"
 
-typedef enum
-{
-    kMenuTagClose,
-    kMenuTagReview,
-} MenuTag;
-
-DialogReview::DialogReview()
+DlgReview::DlgReview()
+: mLayerBase(NULL)
+, mLabelTitle(NULL)
+, mLabelMsg(NULL)
+, mBtnReview(NULL)
+, mBtnClose(NULL)
 {
 }
 
-DialogReview::~DialogReview()
+DlgReview::~DlgReview()
 {
-    
+    CC_SAFE_RELEASE(mLayerBase);
+    CC_SAFE_RELEASE(mLabelTitle);
+    CC_SAFE_RELEASE(mLabelMsg);
+    CC_SAFE_RELEASE(mBtnReview);
+    CC_SAFE_RELEASE(mBtnClose);
 }
 
-DialogReview* DialogReview::create(CCNode* parent)
+void DlgReview::onNodeLoaded(CCNode* pNode, CCNodeLoader* pNodeLoader)
 {
-    DialogReview *pRet = new DialogReview;
-    if(pRet && pRet-> _init(parent))
-    {
-        pRet->autorelease();
-        return pRet;
-    }
-    CC_SAFE_DELETE(pRet);
+    setZOrder(100);
+    mLabelTitle->setString(gls("Review"));
+    mLabelMsg->setString(gls("ReviewMsg"));
+    mBtnReview->setTitleForState(ccs(gls("GoReview")), CCControlStateNormal);
+}
+
+SEL_MenuHandler DlgReview::onResolveCCBCCMenuItemSelector(CCObject* pTarget, const char* pSelectorName)
+{
     return NULL;
 }
 
-bool DialogReview::_init(CCNode* parent)
+SEL_CCControlHandler DlgReview::onResolveCCBCCControlSelector(CCObject* pTarget, const char* pSelectorName)
 {
-    CCSize s = CCDirector::sharedDirector()->getWinSize();
-    
-    CCLayerColor::initWithColor(ccc4(0,0,0,200), s.width, s.height);
-	parent->addChild(this);
-    
-    float w2 = 160;
-    
-    _layerBase = CCLayer::create();
-    _layerBase->setPosition(ccpRatio2(w2,270));
-    addChild(_layerBase);
+	CCB_SELECTORRESOLVER_CCCONTROL_GLUE(this, "onBtnReview", DlgReview::onBtnReview);
+	CCB_SELECTORRESOLVER_CCCONTROL_GLUE(this, "onBtnClose", DlgReview::onBtnClose);
+    return NULL;
+}
 
-    createImageWithFrameName("dlg_bg.png", 0, 0, _layerBase);
-    createLabel(getLocalizedString("Review"), getLocalizedString("fontNormal"), 24, gAnchorCenter, ccYELLOW, 0, 70, _layerBase);
-    
-    CCLabelTTF* text = CCLabelTTF::create(getLocalizedString("ReviewMsg"), getLocalizedString("fontNormal"), 16, CCSizeMake(ccFontRatio(230), ccFontRatio(100)), kCCTextAlignmentCenter);
-	text->setAnchorPoint(ccp(0.5,0));
-	text->setColor(ccWHITE);
-	text->setPosition(ccpRatio(0,-60));
-//    createStroke(text, 1, ccBLACK);
-	_layerBase->addChild(text);
-    
-	CCMenu* menu = createMenu(_layerBase);
-    
-	createMenuItemWithCache("btn_close.png", "btn_close_d.png", 130, 105, kMenuTagClose, menu, this, menu_selector(DialogReview::_menuCallback));
-    
-    CCMenuItem* review = createMenuItemWithCache("btn_normal.png", "btn_normal_d.png", 0, -140, kMenuTagReview, menu, this, menu_selector(DialogReview::_menuCallback));
-    addMenuLabel(review, getLocalizedString("GoReview"), getLocalizedString("fontNormal"), 20, ccYELLOW);
+bool DlgReview::onAssignCCBMemberVariable(CCObject* pTarget, const char* pMemberVariableName, CCNode* pNode)
+{
+    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "mLayerBase", CCLayer*, mLayerBase);
+    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "mLabelMsg", CCLabelTTF*, mLabelMsg);
+    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "mLabelTitle", CCLabelTTF*, mLabelTitle);
+    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "mBtnReview", CCControlButton*, mBtnReview);
+    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "mBtnClose", CCControlButton*, mBtnClose);
+    return false;
+}
 
+void DlgReview::onBtnReview(CCObject* pSender, CCControlEvent pCCControlEvent)
+{
+    Audio->playEffect("Menu.wav");
+
+    HBUmeng::event("Button", "GoReview");
+    gIsReviewd = true;
     GlobalData::save();
+    mLayerBase->runAction(CCSequence::create(CCMoveTo::create(0.3, getPositionByPercent(0, 90)), CCCallFunc::create(this, callfunc_selector(DlgReview::_closeDialogWithReview)), NULL));
+}
 
-	setTouchEnabled(true);
+void DlgReview::onBtnClose(CCObject* pSender, CCControlEvent pCCControlEvent)
+{
+    Audio->playEffect("Menu.wav");
     
-    _layerBase->setScale(0);
-    _layerBase->runAction(CCEaseElasticOut::create(CCScaleTo::create(0.3, 1)));
+    gCurReviewCount = 10;
+    GlobalData::save();
+    mLayerBase->runAction(CCSequence::create(CCMoveTo::create(0.3, getPositionByPercent(0, 90)), CCCallFunc::create(this, callfunc_selector(DlgReview::_closeDialog)), NULL));
+}
+
+void DlgReview::_closeDialog()
+{
+	removeFromParentAndCleanup(true);
+}
+
+void DlgReview::_closeDialogWithReview()
+{
+    gotoReview();
+	removeFromParentAndCleanup(true);
+}
+
+bool DlgReview::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
+{
+    mBtnReview->ccTouchBegan(pTouch, pEvent);
+    mBtnClose->ccTouchBegan(pTouch, pEvent);
     
     return true;
 }
 
-void DialogReview::_menuCallback(CCMenuItem* sender)
+void DlgReview::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
 {
-    MenuTag tag = (MenuTag)sender->getTag();
-    
-    SimpleAudioEngine::sharedEngine()->playEffect("Menu.wav");
-    
-    switch (tag)
-    {
-        case kMenuTagReview:
-            gIsReviewd = true;
-            GlobalData::save();
-            _layerBase->runAction(CCSequence::create(CCEaseElasticIn::create(CCScaleTo::create(0.3, 1)), CCCallFunc::create(this, callfunc_selector(DialogReview::_closeDialogWithReview)), NULL));
-            break;
-        case kMenuTagClose:
-            gCurReviewCount = 10;
-            GlobalData::save();
-            _layerBase->runAction(CCSequence::create(CCEaseBounceOut::create(CCScaleTo::create(0.3, 1)), CCCallFunc::create(this, callfunc_selector(DialogReview::_closeDialog)), NULL));
-            break;
-        default:
-            break;
-    }
+    mBtnReview->ccTouchEnded(pTouch, pEvent);
+    mBtnClose->ccTouchEnded(pTouch, pEvent);
 }
 
-void DialogReview::_closeDialog()
+void DlgReview::registerWithTouchDispatcher()
 {
-	removeFromParentAndCleanup(true);
-}
-
-void DialogReview::_closeDialogWithReview()
-{
-    HBUtilies::gotoReview();
-	removeFromParentAndCleanup(true);
-}
-
-void DialogReview::onEnter()
-{
-	CCLayer::onEnter();
-	CCDirector::sharedDirector()->getTouchDispatcher()->addTargetedDelegate(this, kCCMenuHandlerPriority, true);    
-}
-
-void DialogReview::onExit()
-{
-	CCDirector::sharedDirector()->getTouchDispatcher()->removeDelegate(this);
-	CCLayer::onExit();
-}
-
-bool DialogReview::ccTouchBegan(CCTouch* touch, CCEvent* event)
-{
-	return true;
+    CCDirector* pDirector = CCDirector::sharedDirector();
+    pDirector->getTouchDispatcher()->addTargetedDelegate(this, kCCMenuHandlerPriority-2, true);
 }

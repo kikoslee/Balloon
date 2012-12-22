@@ -11,6 +11,9 @@ DlgChallenge::DlgChallenge()
 , mLabelTimeTitle(NULL)
 , mLabelTitle(NULL)
 , mBtnStart(NULL)
+, mBtnClose(NULL)
+, mBtnLeft(NULL)
+, mBtnRight(NULL)
 , mIconMedal(NULL)
 , mCurLevel(0)
 {
@@ -26,6 +29,9 @@ DlgChallenge::~DlgChallenge()
     CC_SAFE_RELEASE(mLabelTimeTitle);
     CC_SAFE_RELEASE(mLabelTitle);
     CC_SAFE_RELEASE(mBtnStart);
+    CC_SAFE_RELEASE(mBtnClose);
+    CC_SAFE_RELEASE(mBtnLeft);
+    CC_SAFE_RELEASE(mBtnRight);
     CC_SAFE_RELEASE(mIconMedal);
 }
 
@@ -68,6 +74,9 @@ bool DlgChallenge::onAssignCCBMemberVariable(CCObject* pTarget, const char* pMem
     CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "mLabelTitle", CCLabelTTF*, mLabelTitle);
     CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "mIconMedal", CCSprite*, mIconMedal);
     CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "mBtnStart", CCControlButton*, mBtnStart);
+    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "mBtnClose", CCControlButton*, mBtnClose);
+    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "mBtnLeft", CCControlButton*, mBtnLeft);
+    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "mBtnRight", CCControlButton*, mBtnRight);
     return false;
 }
 
@@ -106,7 +115,7 @@ void DlgChallenge::onBtnClose(CCObject* pSender, CCControlEvent pCCControlEvent)
     Audio->playEffect("Menu.wav");
     HBUmeng::event("Button", "ChellangeClose");
 
-    mLayerBase->runAction(CCSequence::create(CCMoveTo::create(0.3, getPositionByPercent(ccp(0, 0.9))), CCCallFunc::create(this, callfunc_selector(DlgChallenge::_closeDialog)), NULL));
+    mLayerBase->runAction(CCSequence::create(CCMoveTo::create(0.3, getPositionByPercent(0, 90)), CCCallFunc::create(this, callfunc_selector(DlgChallenge::_closeDialog)), NULL));
 }
 
 void DlgChallenge::_refreshLevel()
@@ -127,3 +136,28 @@ void DlgChallenge::_closeDialog()
 {
     removeFromParentAndCleanup(true);
 }
+
+bool DlgChallenge::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
+{
+    mBtnStart->ccTouchBegan(pTouch, pEvent);
+    mBtnClose->ccTouchBegan(pTouch, pEvent);
+    mBtnLeft->ccTouchBegan(pTouch, pEvent);
+    mBtnRight->ccTouchBegan(pTouch, pEvent);
+    
+    return true;
+}
+
+void DlgChallenge::ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent)
+{
+    mBtnStart->ccTouchEnded(pTouch, pEvent);
+    mBtnClose->ccTouchEnded(pTouch, pEvent);
+    mBtnLeft->ccTouchEnded(pTouch, pEvent);
+    mBtnRight->ccTouchEnded(pTouch, pEvent);
+}
+
+void DlgChallenge::registerWithTouchDispatcher()
+{
+    CCDirector* pDirector = CCDirector::sharedDirector();
+    pDirector->getTouchDispatcher()->addTargetedDelegate(this, kCCMenuHandlerPriority-2, true);
+}
+

@@ -20,6 +20,10 @@ public:
     virtual bool onAssignCCBMemberVariable(CCObject* pTarget, const char* pMemberVariableName, CCNode* pNode);
     virtual void onNodeLoaded(CCNode* pNode, CCNodeLoader* pNodeLoader);
 
+    bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
+    void ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent);
+    void registerWithTouchDispatcher();
+    
 private:
     CCLayer* mLayerBase;
     CCLayer* mLayerLevel;
@@ -29,15 +33,15 @@ private:
     CCLabelTTF* mLabelGoalTitle;
     CCLabelTTF* mLabelTimeTitle;
     CCControlButton* mBtnStart;
+    CCControlButton* mBtnClose;
+    CCControlButton* mBtnLeft;
+    CCControlButton* mBtnRight;
     CCSprite* mIconMedal;
     
     int mCurLevel;
     CCLabelAtlas* mLabelCurLevel;
 
     void _refreshLevel();
-    
-	bool _initWithLevel(CCNode* parent);
-	void _menuCallback(CCMenuItem* sender);
     void _closeDialog();
     
     void onBtnStart(CCObject* pSender, CCControlEvent pCCControlEvent);

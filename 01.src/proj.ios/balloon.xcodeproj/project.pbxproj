@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		BF00C71C167F87AB00A1F873 /* DlgChallenge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFF97895167CFBF100F74AFE /* DlgChallenge.cpp */; };
+		BF09CCB71685FF28009C0CE1 /* Done.wav in Resources */ = {isa = PBXBuildFile; fileRef = BF09CCB31685FF28009C0CE1 /* Done.wav */; };
+		BF09CCB81685FF28009C0CE1 /* Menu.wav in Resources */ = {isa = PBXBuildFile; fileRef = BF09CCB41685FF28009C0CE1 /* Menu.wav */; };
+		BF09CCB91685FF28009C0CE1 /* Tap.wav in Resources */ = {isa = PBXBuildFile; fileRef = BF09CCB51685FF28009C0CE1 /* Tap.wav */; };
+		BF09CCBA1685FF28009C0CE1 /* upgrade.m4a in Resources */ = {isa = PBXBuildFile; fileRef = BF09CCB61685FF28009C0CE1 /* upgrade.m4a */; };
 		BFA751FF167653F300EEE5A8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFA751FE167653F300EEE5A8 /* QuartzCore.framework */; };
 		BFA75201167653F300EEE5A8 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFA75200167653F300EEE5A8 /* OpenGLES.framework */; };
 		BFA75203167653F300EEE5A8 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFA75202167653F300EEE5A8 /* OpenAL.framework */; };
@@ -19,6 +23,19 @@
 		BFA7522A167653F300EEE5A8 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BFA75229167653F300EEE5A8 /* AppController.mm */; };
 		BFA7522D167653F300EEE5A8 /* RootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BFA7522C167653F300EEE5A8 /* RootViewController.mm */; };
 		BFA7522F167653F300EEE5A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA7522E167653F300EEE5A8 /* main.m */; };
+		BFF77A29168415010016B70B /* HBCommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFF77A0F168415010016B70B /* HBCommon.cpp */; };
+		BFF77A2A168415010016B70B /* gk-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF77A18168415010016B70B /* gk-icon.png */; };
+		BFF77A2B168415010016B70B /* gk-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF77A19168415010016B70B /* gk-icon@2x.png */; };
+		BFF77A2C168415010016B70B /* gk-notification.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF77A1A168415010016B70B /* gk-notification.png */; };
+		BFF77A2D168415010016B70B /* gk-notification@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF77A1B168415010016B70B /* gk-notification@2x.png */; };
+		BFF77A2E168415010016B70B /* GKAchievementHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF77A1D168415010016B70B /* GKAchievementHandler.m */; };
+		BFF77A2F168415010016B70B /* GKAchievementNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF77A1F168415010016B70B /* GKAchievementNotification.m */; };
+		BFF77A30168415010016B70B /* HBGameCenter.mm in Sources */ = {isa = PBXBuildFile; fileRef = BFF77A21168415010016B70B /* HBGameCenter.mm */; };
+		BFF77A31168415010016B70B /* HBCommon.mm in Sources */ = {isa = PBXBuildFile; fileRef = BFF77A22168415010016B70B /* HBCommon.mm */; };
+		BFF77A35168415010016B70B /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF77A26168415010016B70B /* libMobClickLibrary.a */; };
+		BFF77A43168478070016B70B /* ExplodeScore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFF9789B167CFBF200F74AFE /* ExplodeScore.cpp */; };
+		BFF77A4916847F170016B70B /* DlgScore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFF97899167CFBF200F74AFE /* DlgScore.cpp */; };
+		BFF77A4A1684BA3A0016B70B /* DlgReview.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFF97897167CFBF200F74AFE /* DlgReview.cpp */; };
 		BFF9757E167B223E00F74AFE /* SceneLogo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFF9757C167B223E00F74AFE /* SceneLogo.cpp */; };
 		BFF9774B167B23D200F74AFE /* CCAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFF97585167B23D100F74AFE /* CCAction.cpp */; };
 		BFF9774C167B23D200F74AFE /* CCActionCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFF97587167B23D100F74AFE /* CCActionCamera.cpp */; };
@@ -197,7 +214,6 @@
 		BFF977F9167B23D200F74AFE /* CCPhysicsDebugNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFF97747167B23D200F74AFE /* CCPhysicsDebugNode.cpp */; };
 		BFF977FA167B23D200F74AFE /* CCPhysicsSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFF97749167B23D200F74AFE /* CCPhysicsSprite.cpp */; };
 		BFF977FD167B242800F74AFE /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFF977FB167B242800F74AFE /* AppDelegate.cpp */; };
-		BFF97804167B254600F74AFE /* HBCommon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFF97802167B254600F74AFE /* HBCommon.cpp */; };
 		BFF9780C167B2BCC00F74AFE /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF97808167B2BCC00F74AFE /* Default-568h@2x.png */; };
 		BFF9780D167B2BCC00F74AFE /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF97809167B2BCC00F74AFE /* Default-Portrait.png */; };
 		BFF9780E167B2BCC00F74AFE /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF9780A167B2BCC00F74AFE /* Default.png */; };
@@ -209,23 +225,15 @@
 		BFF9785A167B3A4900F74AFE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFF9785C167B3A4900F74AFE /* Localizable.strings */; };
 		BFF97893167CDEFE00F74AFE /* SceneMain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFF97891167CDEFE00F74AFE /* SceneMain.cpp */; };
 		BFFB87131682288A00FDB198 /* GlobalData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFF9789D167CFBF300F74AFE /* GlobalData.cpp */; };
-		BFFB872916822A0800FDB198 /* gk-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFB871C16822A0800FDB198 /* gk-icon.png */; };
-		BFFB872A16822A0800FDB198 /* gk-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFB871D16822A0800FDB198 /* gk-icon@2x.png */; };
-		BFFB872B16822A0800FDB198 /* gk-notification.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFB871E16822A0800FDB198 /* gk-notification.png */; };
-		BFFB872C16822A0800FDB198 /* gk-notification@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFFB871F16822A0800FDB198 /* gk-notification@2x.png */; };
-		BFFB872D16822A0800FDB198 /* GKAchievementHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFB872116822A0800FDB198 /* GKAchievementHandler.m */; };
-		BFFB872E16822A0800FDB198 /* GKAchievementNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = BFFB872316822A0800FDB198 /* GKAchievementNotification.m */; };
-		BFFB872F16822A0800FDB198 /* HBGameCenter.mm in Sources */ = {isa = PBXBuildFile; fileRef = BFFB872516822A0800FDB198 /* HBGameCenter.mm */; };
-		BFFB873016822A0800FDB198 /* HBCommon.mm in Sources */ = {isa = PBXBuildFile; fileRef = BFFB872616822A0800FDB198 /* HBCommon.mm */; };
-		BFFB873116822A0800FDB198 /* HBScore.mm in Sources */ = {isa = PBXBuildFile; fileRef = BFFB872716822A0800FDB198 /* HBScore.mm */; };
-		BFFB873216822A0800FDB198 /* HBUmeng.mm in Sources */ = {isa = PBXBuildFile; fileRef = BFFB872816822A0800FDB198 /* HBUmeng.mm */; };
-		BFFB873516822BCA00FDB198 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFFB873316822BCA00FDB198 /* libMobClickLibrary.a */; };
 		BFFB873716822BF000FDB198 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFFB873616822BF000FDB198 /* GameKit.framework */; };
-		BFFB873B16822F6B00FDB198 /* HBWebBrowser.mm in Sources */ = {isa = PBXBuildFile; fileRef = BFFB873A16822F6B00FDB198 /* HBWebBrowser.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BF00C71B167F870A00A1F873 /* DlgChallengeLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DlgChallengeLoader.h; sourceTree = "<group>"; };
+		BF09CCB31685FF28009C0CE1 /* Done.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Done.wav; sourceTree = "<group>"; };
+		BF09CCB41685FF28009C0CE1 /* Menu.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Menu.wav; sourceTree = "<group>"; };
+		BF09CCB51685FF28009C0CE1 /* Tap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Tap.wav; sourceTree = "<group>"; };
+		BF09CCB61685FF28009C0CE1 /* upgrade.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = upgrade.m4a; sourceTree = "<group>"; };
 		BFA751FA167653F300EEE5A8 /* balloon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = balloon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFA751FE167653F300EEE5A8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BFA75200167653F300EEE5A8 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -241,6 +249,23 @@
 		BFA7522C167653F300EEE5A8 /* RootViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = RootViewController.mm; path = ios/RootViewController.mm; sourceTree = "<group>"; };
 		BFA7522E167653F300EEE5A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ios/main.m; sourceTree = "<group>"; };
 		BFA754A91676540100EEE5A8 /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		BFF77A0F168415010016B70B /* HBCommon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HBCommon.cpp; sourceTree = "<group>"; };
+		BFF77A10168415010016B70B /* HBCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBCommon.h; sourceTree = "<group>"; };
+		BFF77A11168415010016B70B /* HBKeys_Template.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBKeys_Template.h; sourceTree = "<group>"; };
+		BFF77A13168415010016B70B /* HBSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBSingleton.h; sourceTree = "<group>"; };
+		BFF77A18168415010016B70B /* gk-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gk-icon.png"; sourceTree = "<group>"; };
+		BFF77A19168415010016B70B /* gk-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gk-icon@2x.png"; sourceTree = "<group>"; };
+		BFF77A1A168415010016B70B /* gk-notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gk-notification.png"; sourceTree = "<group>"; };
+		BFF77A1B168415010016B70B /* gk-notification@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gk-notification@2x.png"; sourceTree = "<group>"; };
+		BFF77A1C168415010016B70B /* GKAchievementHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKAchievementHandler.h; sourceTree = "<group>"; };
+		BFF77A1D168415010016B70B /* GKAchievementHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKAchievementHandler.m; sourceTree = "<group>"; };
+		BFF77A1E168415010016B70B /* GKAchievementNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKAchievementNotification.h; sourceTree = "<group>"; };
+		BFF77A1F168415010016B70B /* GKAchievementNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKAchievementNotification.m; sourceTree = "<group>"; };
+		BFF77A20168415010016B70B /* HBGameCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBGameCenter.h; sourceTree = "<group>"; };
+		BFF77A21168415010016B70B /* HBGameCenter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HBGameCenter.mm; sourceTree = "<group>"; };
+		BFF77A22168415010016B70B /* HBCommon.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HBCommon.mm; sourceTree = "<group>"; };
+		BFF77A26168415010016B70B /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		BFF77A27168415010016B70B /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		BFF9757C167B223E00F74AFE /* SceneLogo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneLogo.cpp; sourceTree = "<group>"; };
 		BFF9757D167B223E00F74AFE /* SceneLogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneLogo.h; sourceTree = "<group>"; };
 		BFF97585167B23D100F74AFE /* CCAction.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCAction.cpp; sourceTree = "<group>"; };
@@ -653,8 +678,6 @@
 		BFF9774A167B23D200F74AFE /* CCPhysicsSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCPhysicsSprite.h; sourceTree = "<group>"; };
 		BFF977FB167B242800F74AFE /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
 		BFF977FC167B242800F74AFE /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		BFF97802167B254600F74AFE /* HBCommon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HBCommon.cpp; sourceTree = "<group>"; };
-		BFF97803167B254600F74AFE /* HBCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBCommon.h; sourceTree = "<group>"; };
 		BFF97806167B263500F74AFE /* SceneLogoLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneLogoLoader.h; sourceTree = "<group>"; };
 		BFF97807167B281300F74AFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFF97808167B2BCC00F74AFE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -684,29 +707,8 @@
 		BFF9789E167CFBF300F74AFE /* GlobalData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalData.h; sourceTree = "<group>"; };
 		BFFB870D1682262700FDB198 /* DlgReviewLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DlgReviewLoader.h; sourceTree = "<group>"; };
 		BFFB870E1682262700FDB198 /* DlgScoreLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DlgScoreLoader.h; sourceTree = "<group>"; };
-		BFFB8714168228F300FDB198 /* HBUmeng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBUmeng.h; sourceTree = "<group>"; };
-		BFFB87181682291300FDB198 /* HBSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBSingleton.h; sourceTree = "<group>"; };
-		BFFB871916822A0000FDB198 /* HBScore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBScore.h; sourceTree = "<group>"; };
-		BFFB871C16822A0800FDB198 /* gk-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gk-icon.png"; sourceTree = "<group>"; };
-		BFFB871D16822A0800FDB198 /* gk-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gk-icon@2x.png"; sourceTree = "<group>"; };
-		BFFB871E16822A0800FDB198 /* gk-notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gk-notification.png"; sourceTree = "<group>"; };
-		BFFB871F16822A0800FDB198 /* gk-notification@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gk-notification@2x.png"; sourceTree = "<group>"; };
-		BFFB872016822A0800FDB198 /* GKAchievementHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKAchievementHandler.h; sourceTree = "<group>"; };
-		BFFB872116822A0800FDB198 /* GKAchievementHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKAchievementHandler.m; sourceTree = "<group>"; };
-		BFFB872216822A0800FDB198 /* GKAchievementNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKAchievementNotification.h; sourceTree = "<group>"; };
-		BFFB872316822A0800FDB198 /* GKAchievementNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKAchievementNotification.m; sourceTree = "<group>"; };
-		BFFB872416822A0800FDB198 /* HBGameCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBGameCenter.h; sourceTree = "<group>"; };
-		BFFB872516822A0800FDB198 /* HBGameCenter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HBGameCenter.mm; sourceTree = "<group>"; };
-		BFFB872616822A0800FDB198 /* HBCommon.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HBCommon.mm; sourceTree = "<group>"; };
-		BFFB872716822A0800FDB198 /* HBScore.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HBScore.mm; sourceTree = "<group>"; };
-		BFFB872816822A0800FDB198 /* HBUmeng.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HBUmeng.mm; sourceTree = "<group>"; };
-		BFFB873316822BCA00FDB198 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
-		BFFB873416822BCA00FDB198 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		BFFB873616822BF000FDB198 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
-		BFFB873816822C6C00FDB198 /* HBKeys_Template.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBKeys_Template.h; sourceTree = "<group>"; };
 		BFFB873916822CE100FDB198 /* HBKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBKeys.h; sourceTree = "<group>"; };
-		BFFB873A16822F6B00FDB198 /* HBWebBrowser.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HBWebBrowser.mm; sourceTree = "<group>"; };
-		BFFB873C16822F7300FDB198 /* HBWebBrowser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBWebBrowser.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -724,17 +726,28 @@
 				BFA7520B167653F300EEE5A8 /* Foundation.framework in Frameworks */,
 				BFA7520D167653F300EEE5A8 /* CoreGraphics.framework in Frameworks */,
 				BFF977A0167B23D200F74AFE /* libcurl.a in Frameworks */,
-				BFFB873516822BCA00FDB198 /* libMobClickLibrary.a in Frameworks */,
+				BFF77A35168415010016B70B /* libMobClickLibrary.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF09CCB21685FF28009C0CE1 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				BF09CCB31685FF28009C0CE1 /* Done.wav */,
+				BF09CCB41685FF28009C0CE1 /* Menu.wav */,
+				BF09CCB51685FF28009C0CE1 /* Tap.wav */,
+				BF09CCB61685FF28009C0CE1 /* upgrade.m4a */,
+			);
+			path = sounds;
+			sourceTree = "<group>";
+		};
 		BFA751EF167653F200EEE5A8 = {
 			isa = PBXGroup;
 			children = (
-				BFF97805167B254C00F74AFE /* HBCommon */,
+				BFF77A0D168415010016B70B /* HBCommon */,
 				BFA754A81676540100EEE5A8 /* Supporting Files */,
 				BFA754AA1676540100EEE5A8 /* Classes */,
 				BFA75230167653F300EEE5A8 /* libs */,
@@ -772,6 +785,7 @@
 		BFA7520F167653F300EEE5A8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BF09CCB21685FF28009C0CE1 /* sounds */,
 				BFF97816167B2F7C00F74AFE /* imageshd */,
 			);
 			name = Resources;
@@ -848,6 +862,47 @@
 			name = Classes;
 			path = ../Classes;
 			sourceTree = SOURCE_ROOT;
+		};
+		BFF77A0D168415010016B70B /* HBCommon */ = {
+			isa = PBXGroup;
+			children = (
+				BFF77A0F168415010016B70B /* HBCommon.cpp */,
+				BFF77A10168415010016B70B /* HBCommon.h */,
+				BFF77A11168415010016B70B /* HBKeys_Template.h */,
+				BFF77A13168415010016B70B /* HBSingleton.h */,
+				BFF77A16168415010016B70B /* ios */,
+			);
+			name = HBCommon;
+			path = ../../../../HBCommon;
+			sourceTree = "<group>";
+		};
+		BFF77A16168415010016B70B /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				BFF77A17168415010016B70B /* GameCenter */,
+				BFF77A22168415010016B70B /* HBCommon.mm */,
+				BFF77A26168415010016B70B /* libMobClickLibrary.a */,
+				BFF77A27168415010016B70B /* MobClick.h */,
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
+		BFF77A17168415010016B70B /* GameCenter */ = {
+			isa = PBXGroup;
+			children = (
+				BFF77A18168415010016B70B /* gk-icon.png */,
+				BFF77A19168415010016B70B /* gk-icon@2x.png */,
+				BFF77A1A168415010016B70B /* gk-notification.png */,
+				BFF77A1B168415010016B70B /* gk-notification@2x.png */,
+				BFF77A1C168415010016B70B /* GKAchievementHandler.h */,
+				BFF77A1D168415010016B70B /* GKAchievementHandler.m */,
+				BFF77A1E168415010016B70B /* GKAchievementNotification.h */,
+				BFF77A1F168415010016B70B /* GKAchievementNotification.m */,
+				BFF77A20168415010016B70B /* HBGameCenter.h */,
+				BFF77A21168415010016B70B /* HBGameCenter.mm */,
+			);
+			path = GameCenter;
+			sourceTree = "<group>";
 		};
 		BFF97583167B23D100F74AFE /* cocos2dx */ = {
 			isa = PBXGroup;
@@ -1638,53 +1693,6 @@
 			path = physics_nodes;
 			sourceTree = "<group>";
 		};
-		BFF97805167B254C00F74AFE /* HBCommon */ = {
-			isa = PBXGroup;
-			children = (
-				BFFB873816822C6C00FDB198 /* HBKeys_Template.h */,
-				BFFB871916822A0000FDB198 /* HBScore.h */,
-				BFFB87181682291300FDB198 /* HBSingleton.h */,
-				BFFB8714168228F300FDB198 /* HBUmeng.h */,
-				BFF97802167B254600F74AFE /* HBCommon.cpp */,
-				BFF97803167B254600F74AFE /* HBCommon.h */,
-				BFFB873C16822F7300FDB198 /* HBWebBrowser.h */,
-				BFFB871A16822A0800FDB198 /* ios */,
-			);
-			name = HBCommon;
-			path = ../../../../../HBCommon;
-			sourceTree = SOURCE_ROOT;
-		};
-		BFFB871A16822A0800FDB198 /* ios */ = {
-			isa = PBXGroup;
-			children = (
-				BFFB873A16822F6B00FDB198 /* HBWebBrowser.mm */,
-				BFFB873316822BCA00FDB198 /* libMobClickLibrary.a */,
-				BFFB873416822BCA00FDB198 /* MobClick.h */,
-				BFFB871B16822A0800FDB198 /* GameCenter */,
-				BFFB872616822A0800FDB198 /* HBCommon.mm */,
-				BFFB872716822A0800FDB198 /* HBScore.mm */,
-				BFFB872816822A0800FDB198 /* HBUmeng.mm */,
-			);
-			path = ios;
-			sourceTree = "<group>";
-		};
-		BFFB871B16822A0800FDB198 /* GameCenter */ = {
-			isa = PBXGroup;
-			children = (
-				BFFB871C16822A0800FDB198 /* gk-icon.png */,
-				BFFB871D16822A0800FDB198 /* gk-icon@2x.png */,
-				BFFB871E16822A0800FDB198 /* gk-notification.png */,
-				BFFB871F16822A0800FDB198 /* gk-notification@2x.png */,
-				BFFB872016822A0800FDB198 /* GKAchievementHandler.h */,
-				BFFB872116822A0800FDB198 /* GKAchievementHandler.m */,
-				BFFB872216822A0800FDB198 /* GKAchievementNotification.h */,
-				BFFB872316822A0800FDB198 /* GKAchievementNotification.m */,
-				BFFB872416822A0800FDB198 /* HBGameCenter.h */,
-				BFFB872516822A0800FDB198 /* HBGameCenter.mm */,
-			);
-			path = GameCenter;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1749,10 +1757,14 @@
 				BFF97815167B2BEB00F74AFE /* Icon@2x.png in Resources */,
 				BFF97817167B2F7C00F74AFE /* imageshd in Resources */,
 				BFF9785A167B3A4900F74AFE /* Localizable.strings in Resources */,
-				BFFB872916822A0800FDB198 /* gk-icon.png in Resources */,
-				BFFB872A16822A0800FDB198 /* gk-icon@2x.png in Resources */,
-				BFFB872B16822A0800FDB198 /* gk-notification.png in Resources */,
-				BFFB872C16822A0800FDB198 /* gk-notification@2x.png in Resources */,
+				BFF77A2A168415010016B70B /* gk-icon.png in Resources */,
+				BFF77A2B168415010016B70B /* gk-icon@2x.png in Resources */,
+				BFF77A2C168415010016B70B /* gk-notification.png in Resources */,
+				BFF77A2D168415010016B70B /* gk-notification@2x.png in Resources */,
+				BF09CCB71685FF28009C0CE1 /* Done.wav in Resources */,
+				BF09CCB81685FF28009C0CE1 /* Menu.wav in Resources */,
+				BF09CCB91685FF28009C0CE1 /* Tap.wav in Resources */,
+				BF09CCBA1685FF28009C0CE1 /* upgrade.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1941,17 +1953,17 @@
 				BFF977F9167B23D200F74AFE /* CCPhysicsDebugNode.cpp in Sources */,
 				BFF977FA167B23D200F74AFE /* CCPhysicsSprite.cpp in Sources */,
 				BFF977FD167B242800F74AFE /* AppDelegate.cpp in Sources */,
-				BFF97804167B254600F74AFE /* HBCommon.cpp in Sources */,
 				BFF97893167CDEFE00F74AFE /* SceneMain.cpp in Sources */,
 				BF00C71C167F87AB00A1F873 /* DlgChallenge.cpp in Sources */,
 				BFFB87131682288A00FDB198 /* GlobalData.cpp in Sources */,
-				BFFB872D16822A0800FDB198 /* GKAchievementHandler.m in Sources */,
-				BFFB872E16822A0800FDB198 /* GKAchievementNotification.m in Sources */,
-				BFFB872F16822A0800FDB198 /* HBGameCenter.mm in Sources */,
-				BFFB873016822A0800FDB198 /* HBCommon.mm in Sources */,
-				BFFB873116822A0800FDB198 /* HBScore.mm in Sources */,
-				BFFB873216822A0800FDB198 /* HBUmeng.mm in Sources */,
-				BFFB873B16822F6B00FDB198 /* HBWebBrowser.mm in Sources */,
+				BFF77A29168415010016B70B /* HBCommon.cpp in Sources */,
+				BFF77A2E168415010016B70B /* GKAchievementHandler.m in Sources */,
+				BFF77A2F168415010016B70B /* GKAchievementNotification.m in Sources */,
+				BFF77A30168415010016B70B /* HBGameCenter.mm in Sources */,
+				BFF77A31168415010016B70B /* HBCommon.mm in Sources */,
+				BFF77A43168478070016B70B /* ExplodeScore.cpp in Sources */,
+				BFF77A4916847F170016B70B /* DlgScore.cpp in Sources */,
+				BFF77A4A1684BA3A0016B70B /* DlgReview.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2043,7 +2055,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"../libs/cocos2dx/platform/third_party/ios/libraries\"",
-					"\"$(SRCROOT)/../../../../../HBCommon/ios\"",
+					"\"$(SRCROOT)/../../../../HBCommon/ios\"",
 				);
 				OTHER_LDFLAGS = (
 					"-lxml2",
@@ -2066,7 +2078,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"../libs/cocos2dx/platform/third_party/ios/libraries\"",
-					"\"$(SRCROOT)/../../../../../HBCommon/ios\"",
+					"\"$(SRCROOT)/../../../../HBCommon/ios\"",
 				);
 				OTHER_LDFLAGS = (
 					"-lxml2",

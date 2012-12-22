@@ -33,9 +33,9 @@ void SceneLogo::onNodeLoaded(CCNode* pNode, CCNodeLoader* pNodeLoader)
     for (int i = 0; i < 10; i++)
     {
         if (gLevelDetail[i].isClear)
-            createImageWithFrameName("icon_medal.png", -0.045 + (5 - i) * .09, 0, mLayerMadel);
+            createImageWithFrameName("icon_medal.png", -4.5 + (5 - i) * 9, 0, mLayerMadel);
         else
-            createImageWithFrameName("icon_medal_d.png", -0.045 + (5 - i) * .09, 0, mLayerMadel);
+            createImageWithFrameName("icon_medal_d.png", -4.5 + (5 - i) * 9, 0, mLayerMadel);
     }
 }
 
@@ -84,8 +84,6 @@ void SceneLogo::onBtnScore(CCObject* pSender, CCControlEvent pCCControlEvent)
     Audio->playEffect("Menu.wav");
     HBUmeng::event("Button", "Leaderboard");
     HBScore::showBoard(gLeaderboardName);
-//    gGameMode = kGameModeTest;
-//    DialogScore::create(11, this);
 }
 
 void SceneLogo::onBtnMore(CCObject* pSender, CCControlEvent pCCControlEvent)
@@ -93,7 +91,7 @@ void SceneLogo::onBtnMore(CCObject* pSender, CCControlEvent pCCControlEvent)
     Audio->playEffect("Menu.wav");    
     HBUmeng::event("Button", "MoreGames");
 #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
-    HBWebBrowser::gotoUrl("itms-apps://itunes.com/apps/limin");
+    gotoUrl("itms-apps://itunes.com/apps/limin");
 #else
 #endif
 }

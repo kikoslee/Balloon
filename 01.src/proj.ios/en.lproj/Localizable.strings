@@ -1,9 +1,1 @@
-"fontNormal" = "transformers.ttf";
-
-"language" = "en";
-"ShareMsgNormal" = "I just scored %d in TapBurst! Can you beat it? http://bit.ly/TapBurstEN";
-"ShareMsgChellange" = "I just chellange Lv.%d success in TapBurst! Can you pass it? http://bit.ly/TapBurstEN";
-
-"Review" = "Review";
-"ReviewMsg" = "Thank you for you play our game! If you like TapBurst, please give us a 5 star, we are appreciate your review.";
-"GoReview" = "Go Review";
+"ReviewMsg" = "Thank you for you play our game! If you like this game, please give us a 5 star, we are appreciate your review.";

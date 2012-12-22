@@ -1,24 +1,41 @@
-#ifndef _DialogReview_H_
-#define _DialogReview_H_
+#ifndef _DlgReview_H_
+#define _DlgReview_H_
 
-class DialogReview : public CCLayerColor
+#include "HBCommon.h"
+
+class DlgReview
+: public CCLayer
+, public CCBSelectorResolver
+, public CCBMemberVariableAssigner
+, public CCNodeLoaderListener
 {
-    CCLayer* _layerBase;
+public:
+    DlgReview();
+    virtual ~DlgReview();
 
-	bool _init(CCNode* parent);
-	void _menuCallback(CCMenuItem* sender);
+    CCB_STATIC_NEW_AUTORELEASE_OBJECT_WITH_INIT_METHOD(DlgReview, create);
+    
+    virtual SEL_MenuHandler onResolveCCBCCMenuItemSelector(CCObject* pTarget, const char* pSelectorName);
+    virtual SEL_CCControlHandler onResolveCCBCCControlSelector(CCObject* pTarget, const char* pSelectorName);
+    virtual bool onAssignCCBMemberVariable(CCObject* pTarget, const char* pMemberVariableName, CCNode* pNode);
+    virtual void onNodeLoaded(CCNode* pNode, CCNodeLoader* pNodeLoader);
+
+    bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
+    void ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent);
+    void registerWithTouchDispatcher();
+
+private:
+    CCLayer* mLayerBase;
+    CCLabelTTF* mLabelTitle;
+    CCLabelTTF* mLabelMsg;
+    CCControlButton* mBtnReview;
+    CCControlButton* mBtnClose;
+
     void _closeDialog();
     void _closeDialogWithReview();
 
-public:
-    DialogReview();
-    ~DialogReview();
-    
-    static DialogReview* create(CCNode* parent);
-
-    void onEnter();
-    void onExit();
-	bool ccTouchBegan(CCTouch* touch, CCEvent* event);
+    void onBtnReview(CCObject* pSender, CCControlEvent pCCControlEvent);
+    void onBtnClose(CCObject* pSender, CCControlEvent pCCControlEvent);
 };
 
 #endif

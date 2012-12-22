@@ -20,9 +20,9 @@
 #define HBAdKeyIOS_Mobisage "a1ff9b67a24f4d35bfaa405ae0a5172d"
 
 // 友盟
-#define UMENG_KEY "506dd2e85270150c9f0000e7"
+#define UMENG_KEY ""//"506dd2e85270150c9f0000e7"
 
 // iOS应用ID
-#define kAppIDiOS           "439612162"
+#define kAppIDiOS     ""//      "439612162"
 
 #endif

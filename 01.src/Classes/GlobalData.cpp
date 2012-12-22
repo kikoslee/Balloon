@@ -7,6 +7,7 @@ float gScreenHeightHalf;
 
 int gTestLevel = 0;
 GameMode gGameMode = kGameModeNormal;
+int gCurScore = 0;
 int gHighScore = 0;
 const char* gLeaderboardName = "balloon.free";
 

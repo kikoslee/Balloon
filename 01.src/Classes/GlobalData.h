@@ -16,12 +16,6 @@ typedef enum
     kGameModeTest       // 段位测试
 } GameMode;
 
-typedef enum tagTouchState
-{
-	kTouchUngrabbed,
-	kTouchGrabbed,
-} TouchState;
-
 typedef struct
 {
     bool isClear;
@@ -31,6 +25,7 @@ typedef struct
 
 extern int gTestLevel;              // 选择的等级
 extern GameMode gGameMode;          // 玩家选择的模式
+extern int gCurScore;
 extern int gHighScore;
 extern const char* gLeaderboardName;
 
