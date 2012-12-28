@@ -37,6 +37,7 @@ private:
     CCControlButton* mBtnLeft;
     CCControlButton* mBtnRight;
     CCSprite* mIconMedal;
+    CCSprite* mAnimal;
     
     int mCurLevel;
     CCLabelAtlas* mLabelCurLevel;

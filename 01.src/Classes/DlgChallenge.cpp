@@ -16,6 +16,7 @@ DlgChallenge::DlgChallenge()
 , mBtnRight(NULL)
 , mIconMedal(NULL)
 , mCurLevel(0)
+, mAnimal(NULL)
 {
 }
 
@@ -37,9 +38,8 @@ DlgChallenge::~DlgChallenge()
 
 void DlgChallenge::onNodeLoaded(CCNode* pNode, CCNodeLoader* pNodeLoader)
 {
-    mLabelCurLevel = createLabelAtlas(fcs("%d", mCurLevel + 1), "font_number.png", 112, 148, '0', 0, 0, gAnchorCenter, mLayerLevel);
+//    mLabelCurLevel = createLabelAtlas(fcs("%d", mCurLevel + 1), "font_number.png", 112, 148, '0', 0, 0, gAnchorCenter, mLayerLevel);
 
-    mLabelTitle->setString(gls("Level Select"));
     mLabelGoalTitle->setString(gls("Goal"));
     mLabelTimeTitle->setString(gls("Time"));
     
@@ -120,11 +120,22 @@ void DlgChallenge::onBtnClose(CCObject* pSender, CCControlEvent pCCControlEvent)
 
 void DlgChallenge::_refreshLevel()
 {
-    mCurLevel = MAX(MIN(mCurLevel, 9), 0);
+    mCurLevel = MAX(MIN(mCurLevel, LevelCount-1), 0);
 
-    mLabelCurLevel->setString(fcs("%d", mCurLevel + 1));
+//    mLabelCurLevel->setString(fcs("%d", mCurLevel + 1));
+    mLabelTitle->setString(fcs("%s %d", gls("Level"), mCurLevel + 1));
     mLabelGoal->setString(fcs("%d", gLevelDetail[mCurLevel].goal));
     mLabelTime->setString(fcs("%d", gLevelDetail[mCurLevel].time));
+    
+    if (mAnimal)
+    {
+        mAnimal->removeFromParentAndCleanup(true);
+        mAnimal = NULL;
+    }
+    
+    mAnimal = CCSprite::create(fcs("an%d.png", mCurLevel + 1));
+    mAnimal->setScale(0.5);
+    mLayerLevel->addChild(mAnimal);
     
     if(gLevelDetail[mCurLevel].isClear)
         mIconMedal->setVisible(true);

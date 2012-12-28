@@ -226,6 +226,7 @@
 		BFF97893167CDEFE00F74AFE /* SceneMain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFF97891167CDEFE00F74AFE /* SceneMain.cpp */; };
 		BFFB87131682288A00FDB198 /* GlobalData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFF9789D167CFBF300F74AFE /* GlobalData.cpp */; };
 		BFFB873716822BF000FDB198 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFFB873616822BF000FDB198 /* GameKit.framework */; };
+		EE8936C6168DA2CA007330CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE8936C8168DA2CA007330CA /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -709,6 +710,9 @@
 		BFFB870E1682262700FDB198 /* DlgScoreLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DlgScoreLoader.h; sourceTree = "<group>"; };
 		BFFB873616822BF000FDB198 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		BFFB873916822CE100FDB198 /* HBKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBKeys.h; sourceTree = "<group>"; };
+		EE8936C7168DA2CA007330CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EE8936CA168DA2D1007330CA /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		EE8936CB168DA2D2007330CA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -795,6 +799,7 @@
 		BFA75227167653F300EEE5A8 /* ios */ = {
 			isa = PBXGroup;
 			children = (
+				EE8936C8168DA2CA007330CA /* InfoPlist.strings */,
 				BFFB873916822CE100FDB198 /* HBKeys.h */,
 				BFF9785C167B3A4900F74AFE /* Localizable.strings */,
 				BFF97810167B2BEA00F74AFE /* Icon-72.png */,
@@ -1765,6 +1770,7 @@
 				BF09CCB81685FF28009C0CE1 /* Menu.wav in Resources */,
 				BF09CCB91685FF28009C0CE1 /* Tap.wav in Resources */,
 				BF09CCBA1685FF28009C0CE1 /* upgrade.m4a in Resources */,
+				EE8936C6168DA2CA007330CA /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1981,6 +1987,16 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
+		EE8936C8168DA2CA007330CA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE8936C7168DA2CA007330CA /* en */,
+				EE8936CA168DA2D1007330CA /* zh-Hant */,
+				EE8936CB168DA2D2007330CA /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -2018,7 +2034,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: MIN LI";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					NDEBUG,
@@ -2037,6 +2053,7 @@
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A3D56411-CEBC-4DC3-8C83-155E22BDDC33";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2052,6 +2069,7 @@
 				GCC_PREFIX_HEADER = Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"../libs/cocos2dx/platform/third_party/ios/libraries\"",
@@ -2075,6 +2093,7 @@
 				GCC_PREFIX_HEADER = Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"../libs/cocos2dx/platform/third_party/ios/libraries\"",

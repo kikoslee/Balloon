@@ -2,6 +2,7 @@
 
 #include "HBCommon.h"
 #include "SceneLogoLoader.h"
+#include "GlobalData.h"
 
 AppDelegate::AppDelegate()
 {
@@ -32,34 +33,16 @@ bool AppDelegate::applicationDidFinishLaunching()
     }
     
     // turn on display FPS
-    pDirector->setDisplayStats(true);
+//    pDirector->setDisplayStats(true);
     
     // set FPS. the default value is 1.0/60 if you don't call this
     pDirector->setAnimationInterval(1.0 / 60);
     
+    HBScore::initScore();
+    SimpleAudioEngine::sharedEngine()->setEffectsVolume(1.0);
+	GlobalData::load();
+    
 	pDirector->runWithScene(HBSceneLoader("SceneLogo", SceneLogoLoader::loader()));
-
-//    HBScore::initScore();
-//
-//    // Sound
-//    SimpleAudioEngine::sharedEngine()->setEffectsVolume(1.0);
-//
-//	GlobalData::load();
-//    
-//    CCSize s = CCDirector::sharedDirector()->getWinSize();
-//    gScreenWidth = 320; // s.width;
-//    gScreenHeight = 480; //s.height;
-//    gScreenWidthHalf = 160; //s.width / 2;
-//    gScreenHeightHalf = 240; //s.height / 2;
-//
-//    CCSpriteFrameCache* cache = CCSpriteFrameCache::sharedSpriteFrameCache();
-//    cache->addSpriteFramesWithFile("sheet.plist");
-//
-//    // create a scene. it's an autorelease object
-//    CCScene *pScene =  LayerLogo::scene();
-//
-//    // run
-//    pDirector->runWithScene(pScene);
 
     return true;
 }

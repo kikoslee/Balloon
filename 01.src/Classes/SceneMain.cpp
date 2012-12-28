@@ -238,11 +238,11 @@ void SceneMain::_doTouch(int index, CCTouch* touch)
     
     if (gGameMode == kGameModeTest)
     {
-        mAnimal->setScale(0.2 + (float)mTouchCount / (float)mNextGoal * 0.6);
+        if (mTouchCount == mNextGoal)
+            Audio->playEffect("upgrade.m4a");
+        mAnimal->setScale(MIN(1.5, 0.2 + (float)mTouchCount / (float)mNextGoal * 0.6));
     }
-    
-        
-    if (mTouchCount >= mNextGoal && kGameModeTest != gGameMode)
+    else if (mTouchCount >= mNextGoal)
     {
         mCurrentLevel++;
         mLastTime += 1.5;

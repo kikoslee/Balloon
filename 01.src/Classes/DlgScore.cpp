@@ -9,7 +9,6 @@ DlgScore::DlgScore()
 , mLayerScore(NULL)
 , mLabelTitle(NULL)
 , mLabelComplete(NULL)
-, mBtnBack(NULL)
 , mBtnRetry(NULL)
 , mIconStar(NULL)
 , mIconMedal(NULL)
@@ -24,7 +23,6 @@ DlgScore::~DlgScore()
     CC_SAFE_RELEASE(mLayerScore);
     CC_SAFE_RELEASE(mLabelTitle);
     CC_SAFE_RELEASE(mLabelComplete);
-    CC_SAFE_RELEASE(mBtnBack);
     CC_SAFE_RELEASE(mBtnRetry);
     CC_SAFE_RELEASE(mIconStar);
     CC_SAFE_RELEASE(mIconMedal);
@@ -93,8 +91,6 @@ void DlgScore::onNodeLoaded(CCNode* pNode, CCNodeLoader* pNodeLoader)
         }
     }
     
-    mBtnBack->setTitleForState(ccs(gls("Back")), CCControlStateNormal);
-
     _checkReview();
     GlobalData::save();
 }
@@ -107,7 +103,6 @@ SEL_MenuHandler DlgScore::onResolveCCBCCMenuItemSelector(CCObject* pTarget, cons
 SEL_CCControlHandler DlgScore::onResolveCCBCCControlSelector(CCObject* pTarget, const char* pSelectorName)
 {
 	CCB_SELECTORRESOLVER_CCCONTROL_GLUE(this, "onBtnRetry", DlgScore::onBtnRetry);
-	CCB_SELECTORRESOLVER_CCCONTROL_GLUE(this, "onBtnBack", DlgScore::onBtnBack);
     return NULL;
 }
 
@@ -120,14 +115,7 @@ bool DlgScore::onAssignCCBMemberVariable(CCObject* pTarget, const char* pMemberV
     CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "mIconStar", CCSprite*, mIconStar);
     CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "mIconMedal", CCSprite*, mIconMedal);
     CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "mBtnRetry", CCControlButton*, mBtnRetry);
-    CCB_MEMBERVARIABLEASSIGNER_GLUE(this, "mBtnBack", CCControlButton*, mBtnBack);
     return false;
-}
-
-void DlgScore::onBtnBack(CCObject* pSender, CCControlEvent pCCControlEvent)
-{
-    Audio->playEffect("Menu.wav");
-    mLayerBase->runAction(CCSequence::create(CCMoveTo::create(0.3, getPositionByPercent(0, 90)), CCCallFunc::create(this, callfunc_selector(DlgScore::_closeDialog)), NULL));
 }
 
 void DlgScore::onBtnRetry(CCObject* pSender, CCControlEvent pCCControlEvent)
@@ -172,7 +160,6 @@ void DlgScore::_checkReview()
 
 bool DlgScore::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 {
-    mBtnBack->ccTouchBegan(pTouch, pEvent);
     mBtnRetry->ccTouchBegan(pTouch, pEvent);
     
     return true;
@@ -180,7 +167,6 @@ bool DlgScore::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent)
 
 void DlgScore::ccTouchEnded(CCTouch* pTouch, CCEvent* pEvent)
 {
-    mBtnBack->ccTouchEnded(pTouch, pEvent);
     mBtnRetry->ccTouchEnded(pTouch, pEvent);
 }
 

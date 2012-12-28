@@ -29,7 +29,6 @@ private:
     CCLayer* mLayerScore;
     CCLabelTTF* mLabelTitle;
     CCLabelTTF* mLabelComplete;
-    CCControlButton* mBtnBack;
     CCControlButton* mBtnRetry;
     CCSprite* mIconStar;
     CCSprite* mIconMedal;

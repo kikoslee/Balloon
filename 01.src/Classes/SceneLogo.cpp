@@ -33,9 +33,9 @@ void SceneLogo::onNodeLoaded(CCNode* pNode, CCNodeLoader* pNodeLoader)
     for (int i = 0; i < 10; i++)
     {
         if (gLevelDetail[i].isClear)
-            createImageWithFrameName("icon_medal.png", -4.5 + (5 - i) * 9, 0, mLayerMadel);
+            createImageWithFrameName("icon_medal.png", -4.5 + (i - 4) * 9, 0, mLayerMadel);
         else
-            createImageWithFrameName("icon_medal_d.png", -4.5 + (5 - i) * 9, 0, mLayerMadel);
+            createImageWithFrameName("icon_medal_d.png", -4.5 + (i - 4) * 9, 0, mLayerMadel);
     }
 }
 
