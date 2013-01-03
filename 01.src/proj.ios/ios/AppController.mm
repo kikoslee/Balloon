@@ -7,13 +7,12 @@
 //
 #import <UIKit/UIKit.h>
 #import "AppController.h"
-#import "cocos2d.h"
+#import "HBCommon.h"
 #import "EAGLView.h"
 #import "AppDelegate.h"
 
 #import "RootViewController.h"
-
-//#import "BannerAdViewController.h"
+#import "BannerAdViewController.h"
 
 @implementation AppController
 
@@ -28,8 +27,8 @@ static AppDelegate s_sharedApplication;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     // Override point for customization after application launch.
-//    HBUmeng::startup();
-//    HBUmeng::updateConfig();
+    HBUmeng::startup();
+    HBUmeng::updateConfig();
     
     // Add the view controller's view to the window and display.
     window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
@@ -52,15 +51,13 @@ static AppDelegate s_sharedApplication;
 
     [[UIApplication sharedApplication] setStatusBarHidden: YES];
     
-//    if (HBUmeng::getParamValue("isBannerEnable") != 0)
-//    {
-//        BannerAdViewController* vc = [[BannerAdViewController alloc] init];
-//        [vc.view setMultipleTouchEnabled:YES];
-//        [_viewController.view addSubview:vc.view];
-//    }
+    if (HBUmeng::getParamValue("isAdBannerEnable") != 0)
+    {
+        BannerAdViewController* vc = [[BannerAdViewController alloc] init];
+        [vc.view setMultipleTouchEnabled:YES];
+        [_viewController.view addSubview:vc.view];
+    }
     
-    [_viewController.view setMultipleTouchEnabled:YES];
-
     cocos2d::CCApplication::sharedApplication()->run();
     return YES;
 }
@@ -78,7 +75,7 @@ static AppDelegate s_sharedApplication;
 		NSString *strDate = [dateFormatter stringFromDate:[[NSDate date] dateByAddingTimeInterval:60*60*24]];
         
 		//第二天的晚上8点
-		strDate = [NSString stringWithFormat:@"%@ 19:50:00",strDate];
+		strDate = [NSString stringWithFormat:@"%@ 18:50:00",strDate];
 		//NSLog(@"date1:%@",strDate);
 		[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
 		NSDate *date = [dateFormatter dateFromString:strDate];
@@ -86,7 +83,7 @@ static AppDelegate s_sharedApplication;
 		ln.fireDate = date;
 		ln.timeZone = [NSTimeZone defaultTimeZone];
         ln.repeatInterval = NSDayCalendarUnit;
-        ln.applicationIconBadgeNumber = 1;
+//        ln.applicationIconBadgeNumber = 1;
 		NSArray* array = [NSArray arrayWithObjects:
 						  @"Come to challange highest score!",
 						  @"Your friend get a new higher score. Beat It!",
@@ -105,7 +102,7 @@ static AppDelegate s_sharedApplication;
 //    HBUmeng::updateConfig();
 	//LN:打开游戏时,将之前的所有本地通知取消
 	[[UIApplication sharedApplication] cancelAllLocalNotifications];
-    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+//    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {

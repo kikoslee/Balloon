@@ -1,7 +1,7 @@
 "Challenge" = "挑戰模式";
 "Free Mode" = "自由模式";
 "Score" = "排行榜";
-"More" = "更多遊戲";
+"More" = "更多";
 "Back" = "返回";
 "Level" = "關卡";
 "Goal" = "目標";
@@ -13,7 +13,6 @@
 "FINISH" = "結束";
 "Result" = "結果";
 "Again" = "再來一次";
-"Mission %d" = "%d段";
 "High score!" = "恭喜!新記錄!";
 "High score" = "當前記錄";
 "Mission Complete!" = "目標達成！";

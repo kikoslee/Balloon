@@ -3,3 +3,5 @@
 *.xcworkspace
 *.xcuserdatad
 *.xcscheme
+
+01.src/proj.android/obj/*

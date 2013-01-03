@@ -35,7 +35,7 @@ void DlgScore::onNodeLoaded(CCNode* pNode, CCNodeLoader* pNodeLoader)
     if (kGameModeTest == gGameMode)
     {
         // 挑战模式
-        mLabelTitle->setString(fcs("%s %d", gls("Mission"), gTestLevel + 1));
+        mLabelTitle->setString(fcs("%s %d", gls("Level"), gTestLevel + 1));
         mIconStar->setVisible(false);
         mIconMedal->setVisible(true);
         

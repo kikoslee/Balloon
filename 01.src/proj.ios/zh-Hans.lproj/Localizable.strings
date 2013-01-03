@@ -1,7 +1,7 @@
 "Challenge" = "挑战模式";
 "Free Mode" = "自由模式";
 "Score" = "排行榜";
-"More" = "更多游戏";
+"More" = "更多";
 "Back" = "返回";
 "Level" = "关卡";
 "Goal" = "目标";
@@ -13,7 +13,6 @@
 "FINISH" = "结束";
 "Result" = "结果";
 "Again" = "再来一次";
-"Mission %d" = "%d段";
 "High score!" = "恭喜!新记录!";
 "High score" = "当前记录";
 "Mission Complete!" = "目标达成！";
