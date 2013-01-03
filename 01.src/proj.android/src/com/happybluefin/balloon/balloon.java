@@ -1,39 +1,53 @@
-/****************************************************************************
-Copyright (c) 2010-2012 cocos2d-x.org
-
-http://www.cocos2d-x.org
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-****************************************************************************/
 package com.happybluefin.balloon;
 
-import org.cocos2dx.lib.Cocos2dxActivity;
+import java.util.Locale;
 
-import android.os.Bundle;
+import android.app.Application;
+import android.util.Log;
 
-public class balloon extends Cocos2dxActivity{
-
-	protected void onCreate(Bundle savedInstanceState){
-		super.onCreate(savedInstanceState);
-	}
+public class balloon extends Application {
 	
-    static {
-         System.loadLibrary("game");
+	private native int nativeSetLang(String a);
+	
+    public void onCreate() {
+
+        //ȡ��������
+//        mContext = this;
+
+        //��ʼ����������
+        _initLanguage();
+
+        //��ʼ�����߲���
+//        _loadOnlineConfig();
+
+        //��ʼ�����а�
+//        _initLeaderboards();
     }
+    
+    private void _initLanguage() {
+		 String language1 = "";
+		 String language2 = "";
+		 
+		 language1 = Locale.getDefault().getLanguage();
+		 Log.i("jnitest", "------language1:-----"+language1);
+		 language2 = Locale.getDefault().toString();
+		 Log.i("jnitest", "------language2:-----"+language2);
+		
+		
+		 if(language1.compareTo("zh") == 0)
+			 nativeSetLang(language2);
+		 else
+			 nativeSetLang(language1); 
+    }
+    
+    static {
+        try {
+            System.loadLibrary("game");
+        }
+        catch (UnsatisfiedLinkError e) {
+            e.printStackTrace();
+            throw e;
+        }
+    }
+    
 }

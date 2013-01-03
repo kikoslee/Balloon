@@ -42,4 +42,37 @@ void Java_org_cocos2dx_lib_Cocos2dxRenderer_nativeInit(JNIEnv*  env, jobject thi
     }
 }
 
+char* jstringTostring(JNIEnv* env, jstring jstr)
+{
+	char* rtn = NULL;
+	jclass clsstring = env->FindClass("java/lang/String");
+	jstring strencode = env->NewStringUTF("utf-8");
+	jmethodID mid = env->GetMethodID(clsstring, "getBytes", "(Ljava/lang/String;)[B");
+	jbyteArray barr= (jbyteArray)env->CallObjectMethod(jstr, mid, strencode);
+	jsize alen = env->GetArrayLength(barr);
+	jbyte* ba = env->GetByteArrayElements(barr, JNI_FALSE);
+	if (alen > 0)
+	{
+		rtn = (char*)malloc(alen + 1);
+		memcpy(rtn, ba, alen);
+		rtn[alen] = 0;
+	}
+	env->ReleaseByteArrayElements(barr, ba, 0);
+	return rtn;
+}
+
+//获取语言
+jint Java_com_happybluefin_balloon_balloon_nativeSetLang(JNIEnv *env, jobject thiz, jstring a)
+{
+	char* re ;
+	re = jstringTostring(env , a);
+
+	sprintf(HBDeviceLanguage, "%s", re);
+
+	CCLOG("*****nativeSetLang****%s", re);
+	CCLOG("nativeSetLang :%s", HBDeviceLanguage );
+
+	return 1;
+}
+
 }
