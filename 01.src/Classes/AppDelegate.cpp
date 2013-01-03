@@ -22,14 +22,15 @@ bool AppDelegate::applicationDidFinishLaunching()
     
     CCFileUtils::sharedFileUtils()->setResourceDirectory("imageshd");
     pDirector->setContentScaleFactor(1);
+    
     if (screenSize.width > 640)
-        CCEGLView::sharedOpenGLView()->setDesignResolutionSize(768, 1024, kResolutionShowAll);
+        CCEGLView::sharedOpenGLView()->setDesignResolutionSize(768, 1024, kResolutionExactFit);
     else
     {
         if (screenSize.height > 960)
-            CCEGLView::sharedOpenGLView()->setDesignResolutionSize(640, 1136, kResolutionShowAll);
+            CCEGLView::sharedOpenGLView()->setDesignResolutionSize(640, 1136, kResolutionExactFit);
         else
-            CCEGLView::sharedOpenGLView()->setDesignResolutionSize(640, 960, kResolutionShowAll);
+            CCEGLView::sharedOpenGLView()->setDesignResolutionSize(640, 960, kResolutionExactFit);
     }
     
     // turn on display FPS

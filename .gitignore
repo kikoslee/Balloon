@@ -5,3 +5,9 @@
 *.xcscheme
 
 01.src/proj.android/obj/*
+01.src/proj.android/assets/imageshd/*
+01.src/proj.android/assets/sheet.tps
+01.src/proj.android/assets/sounds/*
+01.src/proj.android/bin/*
+
+01.src/proj.android/libs/armeabi/libgame.so
