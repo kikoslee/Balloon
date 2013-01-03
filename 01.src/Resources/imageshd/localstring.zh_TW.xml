@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+	<obj id="Free Mode" value="自由模式" />
+	<obj id="Level" value="關卡" />
+	<obj id="Goal" value="目標" />
+	<obj id="Time" value="時間" />
+	<obj id="Start" value="開始" />
+	<obj id="Result" value="結果" />
+	<obj id="Retry" value="重試" />
+	<obj id="High score!" value="恭喜!新記錄!" />
+	<obj id="High score" value="當前記錄" />
+	<obj id="Mission Complete!" value="目標達成！" />
+	<obj id="All Clear!!!" value="全部達成！！！" />
+	<obj id="Mission Failed!" value="挑戰失敗！" />
+	<obj id="Challenge" value="挑戰模式" />
+	<obj id="Score" value="排行榜" />
+	<obj id="More" value="更多" />
+	<obj id="Back" value="返回" />
+	<obj id="Again" value="再來一次" />
+	<obj id="Close" value="關閉" />
+	<obj id="Next" value="下一關" />
+	<obj id="High" value="最高分" />
+	<obj id="TOUCH TO START" value="點擊按鈕開始遊戲" />
+	<obj id="FINISH" value="結束" />
+	<obj id="Come to challange highest score!" value="今天還沒測試點擊次數呢,快來測測吧." />
+	<obj id="Your friend get a new higher score. Beat It!" value="你的朋友剛剛超過了你的分數,快來擊敗他." />
+	<obj id="Review" value="評價" />
+	<obj id="ReviewMsg" value="恭喜您達成了新的成就!如果您喜歡我們的産品,請給個星評價吧,您的肯定是讓我們做的更好的最大動力,謝謝!" />
+	<obj id="GoReview" value="去評價" />
+</strings>
+

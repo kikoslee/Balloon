@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<strings>
+	<obj id="Free Mode" value="フリモ-ド" />
+	<obj id="Level" value="レベル" />
+	<obj id="Goal" value="目標" />
+	<obj id="Time" value="タイム" />
+	<obj id="Start" value="スタート" />
+	<obj id="Result" value="結果" />
+	<obj id="Retry" value="再挑戦" />
+	<obj id="High score!" value="新の記録！" />
+	<obj id="High score" value="現在の記録" />
+	<obj id="Mission Complete!" value="目標は達成しました！" />
+	<obj id="All Clear!!!" value="目標は全て達成しました！" />
+	<obj id="Mission Failed!" value="失敗！" />
+	<obj id="Challenge" value="達人☆挑戦" />
+	<obj id="Score" value="Score" />
+	<obj id="More" value="もっと" />
+	<obj id="Back" value="戻る" />
+	<obj id="Again" value="再挑戦" />
+	<obj id="Close" value="閉じる" />
+	<obj id="Next" value="次へ" />
+	<obj id="High" value="トップ点数" />
+	<obj id="TOUCH TO START" value="ボタンを押すと" />
+	<obj id="FINISH" value="終了" />
+	<obj id="Come to challange highest score!" value="今日はまだ「ヒット達人」を試してないが、早く来るよ！" />
+	<obj id="Your friend get a new higher score. Beat It!" value="さっき、友達が君の点数を超えました。早く彼を打ち破るよ！" />
+	<obj id="Review" value="Review" />
+	<obj id="ReviewMsg" value="Thank you for you play our game! If you like this game, please give us a 5 star, we are appreciate your review." />
+	<obj id="GoReview" value="Go Review" />
+</strings>
