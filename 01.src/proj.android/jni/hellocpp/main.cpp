@@ -75,4 +75,10 @@ jint Java_com_happybluefin_balloon_balloon_nativeSetLang(JNIEnv *env, jobject th
 	return 1;
 }
 
+jstring Java_com_happybluefin_balloon_GameWindow_getAdmobUnitID(JNIEnv *env, jclass cls)
+{
+    jstring ret = env->NewStringUTF("a150e5225034014");
+    return ret;
+}
+
 }

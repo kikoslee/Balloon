@@ -2,11 +2,12 @@ package com.happybluefin.balloon;
 
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.Gravity;
 
 import org.cocos2dx.lib.Cocos2dxActivity;
 
 //import com.happybluefin.android.dialog.MessageDialog;
-//import com.happybluefin.android.utility.thirdpart.advertisement.Banner.AdsMogoSDK;
+import com.happybluefin.android.framework.utility.thirdpart.advertisement.Banner.GoogleAdmobSDK;
 //import com.happybluefin.android.utility.thirdpart.rankinglist.ScoreloopSDK;
 //import com.happybluefin.android.utility.system.Comment;
 //import com.happybluefin.android.utility.system.Network;
@@ -25,18 +26,13 @@ import org.cocos2dx.lib.Cocos2dxActivity;
 //import android.util.Log;
 //import android.widget.Toast;
 
-//public class balloon extends Cocos2dxActivity{
-//
-//	protected void onCreate(Bundle savedInstanceState){
-//		super.onCreate(savedInstanceState);
-//	}
-//	
-//  static {
-//       System.loadLibrary("game");
-//  }
-//}
-
 public class GameWindow extends Cocos2dxActivity {
+	
+	/**
+     * @brief  取得Admob广告ID函数。
+     */
+    private native String getAdmobUnitID();
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,19 +43,17 @@ public class GameWindow extends Cocos2dxActivity {
 //        _initStatistics();
 
         //初始化横幅广告
-//        _initBanner();
+        GoogleAdmobSDK.createBanner(this, getAdmobUnitID(), Gravity.BOTTOM);
     }
 
     @Override
     public void onDestroy() {
-        super.onDestroy();
-        // destory google admob
-//        if (TapBurstFreeApplication.mIsAdBannerEnable == 1) {
-//            AdsMogoSDK.destoryBanner();
-//        }
+        //销毁横幅广告
+        GoogleAdmobSDK.destoryBanner();
 
         // unregist receiver
 //        unregisterReceiver(mReceiver);
+        super.onDestroy();
     }
 
     @Override
@@ -107,13 +101,6 @@ public class GameWindow extends Cocos2dxActivity {
 
         //初始化友盟在线配置
 //        UmengSDK.updateOnlineConfig(this);
-    }
-
-    private void _initBanner() {
-//        if (TapBurstFreeApplication.mIsAdBannerEnable == 1) {
-            //初始化芒果横幅广告
-//            AdsMogoSDK.createBanner(this, TapBurstFreeApplication.getAdsMogoAppID());
-//        }
     }
 
     private void _exitApplication() {

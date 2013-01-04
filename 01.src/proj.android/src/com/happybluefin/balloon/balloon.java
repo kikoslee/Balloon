@@ -7,8 +7,11 @@ import android.util.Log;
 
 public class balloon extends Application {
 	
+	/**
+     * @brief  取得设备语音。
+     */
 	private native int nativeSetLang(String a);
-	
+ 
     public void onCreate() {
 
         //ȡ��������
