@@ -1,19 +1,18 @@
 package com.happybluefin.balloon;
 
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.Gravity;
 
 import org.cocos2dx.lib.Cocos2dxActivity;
 
 //import com.happybluefin.android.dialog.MessageDialog;
 import com.happybluefin.android.framework.utility.thirdpart.advertisement.Banner.GoogleAdmobSDK;
+import com.happybluefin.android.framework.utility.thirdpart.statistics.UmengSDK;
 //import com.happybluefin.android.utility.thirdpart.rankinglist.ScoreloopSDK;
 //import com.happybluefin.android.utility.system.Comment;
 //import com.happybluefin.android.utility.system.Network;
 //import com.happybluefin.android.utility.system.Share;
 //import com.happybluefin.android.utility.system.Utility;
-//import com.happybluefin.android.utility.thirdpart.statistics.UmengSDK;
 //import com.happybluefin.tapburstfree.R;
 //import com.happybluefin.tapburstfree.message.Define;
 //import com.happybluefin.tapburstfree.application.TapBurstFreeApplication;
@@ -39,8 +38,9 @@ public class GameWindow extends Cocos2dxActivity {
         //初始化控件
 //        _initView();
 
-        //初始化数据统计
-//        _initStatistics();
+        //初始化友盟
+        UmengSDK.autoErrorReport(this);
+//      UmengSDK.updateOnlineConfig(this);
 
         //初始化横幅广告
         GoogleAdmobSDK.createBanner(this, getAdmobUnitID(), Gravity.BOTTOM);
@@ -59,30 +59,13 @@ public class GameWindow extends Cocos2dxActivity {
     @Override
     protected void onPause() {
         super.onPause();
-
-//        UmengSDK.onPause(this);
+        UmengSDK.onPause(this);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-
-//        UmengSDK.onResume(this);
-    }
-
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        boolean result = false;
-
-        if(keyCode == KeyEvent.KEYCODE_BACK) {
-            _exitApplication();
-            result = true;
-        }
-        else {
-            result = super.onKeyDown(keyCode, event);
-        }
-
-        return result;
+        UmengSDK.onResume(this);
     }
 
     private void _initView() {
@@ -91,40 +74,10 @@ public class GameWindow extends Cocos2dxActivity {
 //        filter.addAction(Define.Action.ACTION);
 //        registerReceiver(mReceiver, filter);
     }
-
-    private void _initStatistics() {
-        //初始化友盟自动更新
-//        UmengSDK.autoUpdate(this);
-
-        //初始化友盟错误报告
-//        UmengSDK.autoErrorReport(this);
-
-        //初始化友盟在线配置
-//        UmengSDK.updateOnlineConfig(this);
-    }
-
-    private void _exitApplication() {
-//        MessageDialog.show(this,
-//                           getString(R.string.exit_hint_title),
-//                           getString(R.string.exit_hint),
-//                           new DialogInterface.OnClickListener() {
-//                               @Override
-//                               public void onClick(DialogInterface dialog, int which) {
-//                                   dialog.dismiss();
-//                                   TapBurstFreeWindow.this.finish();
-//                                   android.os.Process.killProcess(android.os.Process.myPid());
-//                               }
-//                           },
-//                           getString(R.string.yes),
-//                           new DialogInterface.OnClickListener() {
-//                               @Override
-//                               public void onClick(DialogInterface dialog, int which) {
-//                                dialog.dismiss();
-//                               }
-//                           },
-//                           getString(R.string.no));
-    }
-
+    
+    /**
+     * @brief 广播接收器。
+     */
 //    private BroadcastReceiver mReceiver = new BroadcastReceiver() {
 //        @Override
 //        public void onReceive(Context context, Intent intent) {
@@ -152,7 +105,6 @@ public class GameWindow extends Cocos2dxActivity {
 //                                       R.string.can_not_connect_network,
 //                                       Toast.LENGTH_SHORT);
 //                    }
-//
 //                    break;
 //
 //                case Define.MessageID.REPORT_SCORE:
@@ -172,7 +124,6 @@ public class GameWindow extends Cocos2dxActivity {
 //                                       R.string.can_not_connect_network,
 //                                       Toast.LENGTH_SHORT);
 //                    }
-//
 //                    break;
 //
 //                case Define.MessageID.SHARE_TEXT:
@@ -193,7 +144,6 @@ public class GameWindow extends Cocos2dxActivity {
 //                                       R.string.can_not_connect_network,
 //                                       Toast.LENGTH_SHORT);
 //                    }
-//
 //                    break;
 //
 //                case Define.MessageID.WEB_BROWSER:
@@ -209,7 +159,6 @@ public class GameWindow extends Cocos2dxActivity {
 //                                       R.string.can_not_connect_network,
 //                                       Toast.LENGTH_SHORT);
 //                    }
-//
 //                    break;
 //
 //                case Define.MessageID.GOTO_REVIEW:
@@ -225,7 +174,6 @@ public class GameWindow extends Cocos2dxActivity {
 //                                       R.string.can_not_connect_network,
 //                                       Toast.LENGTH_SHORT);
 //                    }
-//
 //                    break;
 //
 //                case Define.MessageID.EXIT_APPLICATION:
@@ -241,6 +189,6 @@ public class GameWindow extends Cocos2dxActivity {
 //            //Log.d(TAG, "BroadcastReceiver::onReceive() end");
 //        }
 //    };
-
+    
     private static final String TAG = "Balloon";
 }

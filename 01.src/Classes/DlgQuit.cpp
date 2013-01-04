@@ -13,6 +13,7 @@ DlgQuit::~DlgQuit()
     CC_SAFE_RELEASE(mLabelMsg);
     CC_SAFE_RELEASE(mBtnQuit);
     CC_SAFE_RELEASE(mBtnCancel);
+    gIsDlgQuitShow = false;
 }
 
 void DlgQuit::onNodeLoaded(CCNode* pNode, CCNodeLoader* pNodeLoader)
