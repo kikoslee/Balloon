@@ -33,6 +33,8 @@ extern const char* gLeaderboardName;
 extern bool gIsReviewd;         // 是否已经进行过评论
 extern int gCurReviewCount;     // 当前评论计数,每10次游戏弹出一遍
 
+extern bool gIsDlgQuitShow;    
+
 #define LevelCount 12
 extern LevelDetail gLevelDetail[LevelCount];
 

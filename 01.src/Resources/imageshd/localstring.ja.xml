@@ -27,4 +27,5 @@
 	<obj id="Review" value="Review" />
 	<obj id="ReviewMsg" value="Thank you for you play our game! If you like this game, please give us a 5 star, we are appreciate your review." />
 	<obj id="GoReview" value="Go Review" />
+	<obj id="QuitMsg" value="Are you sure you want to quit?" />
 </strings>

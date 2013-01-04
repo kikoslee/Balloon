@@ -69,8 +69,8 @@ jint Java_com_happybluefin_balloon_balloon_nativeSetLang(JNIEnv *env, jobject th
 
 	sprintf(HBDeviceLanguage, "%s", re);
 
-	CCLOG("*****nativeSetLang****%s", re);
-	CCLOG("nativeSetLang :%s", HBDeviceLanguage );
+	LOGD("*****nativeSetLang****%s", re);
+	LOGD("nativeSetLang :%s", HBDeviceLanguage );
 
 	return 1;
 }

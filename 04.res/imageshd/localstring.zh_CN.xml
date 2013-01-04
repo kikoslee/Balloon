@@ -27,4 +27,7 @@
 	<obj id="Review" value="评价" />
 	<obj id="ReviewMsg" value="恭喜您达成了新的成就!如果您喜欢我们的产品,请给个5星评价吧,您的肯定是让我们做的更好的最大动力,谢谢!" />
 	<obj id="GoReview" value="去评价" />
+	<obj id="Quit" value="退出" />
+	<obj id="Cancel" value="取消" />
+	<obj id="QuitMsg" value="确定要退出游戏么?" />
 </strings>

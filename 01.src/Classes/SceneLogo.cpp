@@ -2,6 +2,7 @@
 #include "GlobalData.h"
 #include "SceneMainLoader.h"
 #include "DlgChallengeLoader.h"
+#include "DlgQuitLoader.h"
 
 SceneLogo::SceneLogo()
 : mBtnChallenge(NULL)
@@ -11,6 +12,7 @@ SceneLogo::SceneLogo()
 , mLogo(NULL)
 , mLayerMadel(NULL)
 {
+    setKeypadEnabled(true);
 }
 
 SceneLogo::~SceneLogo()
@@ -96,14 +98,14 @@ void SceneLogo::onBtnMore(CCObject* pSender, CCControlEvent pCCControlEvent)
 #endif
 }
 
-////for android
-//void LayerLogo::keyBackClicked()
-//{
-//#if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
-//    exitApplication();
-//#endif // CC_PLATFORM_ANDROID
-//}
-//
-//void LayerLogo::keyMenuClicked()
-//{
-//}
+//for android
+void SceneLogo::keyBackClicked()
+{
+#if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
+    if (!gIsDlgQuitShow)
+    {
+        gIsDlgQuitShow = true;
+        CCDirector::sharedDirector()->getRunningScene()->addChild(HBLayerLoader("DlgQuit", DlgQuitLoader::loader()));
+    }
+#endif // CC_PLATFORM_ANDROID
+}

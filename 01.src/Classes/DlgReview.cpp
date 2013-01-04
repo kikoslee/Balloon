@@ -8,6 +8,7 @@ DlgReview::DlgReview()
 , mBtnReview(NULL)
 , mBtnClose(NULL)
 {
+    setKeypadEnabled(true);
 }
 
 DlgReview::~DlgReview()
@@ -98,3 +99,4 @@ void DlgReview::registerWithTouchDispatcher()
     CCDirector* pDirector = CCDirector::sharedDirector();
     pDirector->getTouchDispatcher()->addTargetedDelegate(this, kCCMenuHandlerPriority-2, true);
 }
+

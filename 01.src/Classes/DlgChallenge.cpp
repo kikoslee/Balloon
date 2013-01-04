@@ -18,6 +18,7 @@ DlgChallenge::DlgChallenge()
 , mCurLevel(0)
 , mAnimal(NULL)
 {
+    setKeypadEnabled(true);
 }
 
 DlgChallenge::~DlgChallenge()
@@ -171,4 +172,3 @@ void DlgChallenge::registerWithTouchDispatcher()
     CCDirector* pDirector = CCDirector::sharedDirector();
     pDirector->getTouchDispatcher()->addTargetedDelegate(this, kCCMenuHandlerPriority-2, true);
 }
-

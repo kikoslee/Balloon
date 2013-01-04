@@ -18,6 +18,7 @@ SceneMain::SceneMain()
 , mBtnMain(NULL)
 , mAnimal(NULL)
 {
+    setKeypadEnabled(true);
 }
 
 SceneMain::~SceneMain()
@@ -282,14 +283,11 @@ void SceneMain::registerWithTouchDispatcher()
     pDirector->getTouchDispatcher()->addTargetedDelegate(this, 0, true);
 }
 
-/*
-void LayerMain::keyBackClicked()
+//for android
+void SceneMain::keyBackClicked()
 {
-	_back();
+#if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
+    Audio->playEffect("Menu.wav");
+    CCDirector::sharedDirector()->replaceScene(HBSceneLoader("SceneLogo", SceneLogoLoader::loader()));
+#endif // CC_PLATFORM_ANDROID
 }
-
-void LayerMain::keyMenuClicked()
-{
-
-}
-*/

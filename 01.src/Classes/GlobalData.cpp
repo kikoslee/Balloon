@@ -15,6 +15,8 @@ const char* gLeaderboardName = "balloon.free";
 bool gIsReviewd = false;        // 是否已经进行过评论
 int gCurReviewCount = 3;        // 当前评论计数,每10次游戏弹出一遍
 
+bool gIsDlgQuitShow = false;
+
 LevelDetail gLevelDetail[LevelCount] = {
     { false,  40, 10 },
     { false,  80, 18 },

@@ -1809,7 +1809,7 @@
 				<key>type</key>
 				<string>Check</string>
 				<key>value</key>
-				<false/>
+				<true/>
 			</dict>
 		</array>
 	</dict>

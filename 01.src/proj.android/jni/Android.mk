@@ -11,6 +11,7 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../Classes/DlgChallenge.cpp \
                    ../../Classes/DlgReview.cpp \
                    ../../Classes/DlgScore.cpp \
+                   ../../Classes/DlgQuit.cpp \
                    ../../Classes/ExplodeScore.cpp \
                    ../../Classes/GlobalData.cpp \
                    ../../Classes/SceneLogo.cpp \

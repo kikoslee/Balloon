@@ -31,6 +31,8 @@ public:
     virtual void registerWithTouchDispatcher();
     virtual bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
     virtual void ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent);
+
+    virtual void keyBackClicked();
     
 private:
     void onBtnBack(CCObject* pSender, CCControlEvent pCCControlEvent);

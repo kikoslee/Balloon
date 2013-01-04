@@ -642,6 +642,7 @@
 		EE1D1B79168E050300D9CB93 /* 分享.png in Resources */ = {isa = PBXBuildFile; fileRef = EE1D19A1168DF52F00D9CB93 /* 分享.png */; };
 		EE1D1B7A168E050300D9CB93 /* AdMoGoWebBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE1D19B3168DF52F00D9CB93 /* AdMoGoWebBrowser.xib */; };
 		EE1D1B7B168E050300D9CB93 /* AdMoGoWebBrowser_ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE1D19B4168DF52F00D9CB93 /* AdMoGoWebBrowser_ipad.xib */; };
+		EE58BAB51696BCDB007D3C2D /* DlgQuit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE58BAB11696BB9B007D3C2D /* DlgQuit.cpp */; };
 		EE8936C6168DA2CA007330CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE8936C8168DA2CA007330CA /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
@@ -1260,6 +1261,9 @@
 		EE1D1A30168DFCEC00D9CB93 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		EE1D1A36168DFD4800D9CB93 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		EE1D1B7F168E050300D9CB93 /* balloon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = balloon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE58BAB11696BB9B007D3C2D /* DlgQuit.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DlgQuit.cpp; sourceTree = "<group>"; };
+		EE58BAB21696BB9B007D3C2D /* DlgQuit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DlgQuit.h; sourceTree = "<group>"; };
+		EE58BAB31696BB9B007D3C2D /* DlgQuitLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DlgQuitLoader.h; sourceTree = "<group>"; };
 		EE8936C7168DA2CA007330CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EE8936CA168DA2D1007330CA /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		EE8936CB168DA2D2007330CA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -1446,6 +1450,9 @@
 		BFA754AA1676540100EEE5A8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				EE58BAB11696BB9B007D3C2D /* DlgQuit.cpp */,
+				EE58BAB21696BB9B007D3C2D /* DlgQuit.h */,
+				EE58BAB31696BB9B007D3C2D /* DlgQuitLoader.h */,
 				BFF97895167CFBF100F74AFE /* DlgChallenge.cpp */,
 				BFF97896167CFBF100F74AFE /* DlgChallenge.h */,
 				BF00C71B167F870A00A1F873 /* DlgChallengeLoader.h */,
@@ -3038,6 +3045,7 @@
 				EE1D19C2168DF53000D9CB93 /* MobisageFullScreenAdViewController.m in Sources */,
 				EE1D19C4168DF53000D9CB93 /* JSONKit.m in Sources */,
 				EE1D1A23168DF57600D9CB93 /* BannerAdViewController.mm in Sources */,
+				EE58BAB51696BCDB007D3C2D /* DlgQuit.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

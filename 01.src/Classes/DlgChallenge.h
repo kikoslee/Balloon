@@ -23,7 +23,7 @@ public:
     bool ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent);
     void ccTouchEnded(CCTouch *pTouch, CCEvent *pEvent);
     void registerWithTouchDispatcher();
-    
+
 private:
     CCLayer* mLayerBase;
     CCLayer* mLayerLevel;
