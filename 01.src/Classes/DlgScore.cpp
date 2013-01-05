@@ -120,7 +120,7 @@ bool DlgScore::onAssignCCBMemberVariable(CCObject* pTarget, const char* pMemberV
 
 void DlgScore::onBtnRetry(CCObject* pSender, CCControlEvent pCCControlEvent)
 {
-    Audio->playEffect("Menu.wav");
+    Audio->playEffect(EF_Menu);
     mLayerBase->runAction(CCSequence::create(CCMoveTo::create(0.3, getPositionByPercent(0, 90)), CCCallFunc::create(this, callfunc_selector(DlgScore::_closeDialog)), NULL));
 }
 

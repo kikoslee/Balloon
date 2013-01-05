@@ -52,7 +52,7 @@ bool DlgReview::onAssignCCBMemberVariable(CCObject* pTarget, const char* pMember
 
 void DlgReview::onBtnReview(CCObject* pSender, CCControlEvent pCCControlEvent)
 {
-    Audio->playEffect("Menu.wav");
+    Audio->playEffect(EF_Menu);
 
     HBUmeng::event("Button", "GoReview");
     gIsReviewd = true;
@@ -62,7 +62,7 @@ void DlgReview::onBtnReview(CCObject* pSender, CCControlEvent pCCControlEvent)
 
 void DlgReview::onBtnClose(CCObject* pSender, CCControlEvent pCCControlEvent)
 {
-    Audio->playEffect("Menu.wav");
+    Audio->playEffect(EF_Menu);
     
     gCurReviewCount = 10;
     GlobalData::save();

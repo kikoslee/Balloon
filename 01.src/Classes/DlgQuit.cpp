@@ -51,7 +51,7 @@ void DlgQuit::onBtnQuit(CCObject* pSender, CCControlEvent pCCControlEvent)
 
 void DlgQuit::onBtnCancel(CCObject* pSender, CCControlEvent pCCControlEvent)
 {
-    Audio->playEffect("Menu.wav");
+    Audio->playEffect(EF_Menu);
     removeFromParentAndCleanup(true);
     gIsDlgQuitShow = false;
 }

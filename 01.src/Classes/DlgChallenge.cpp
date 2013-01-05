@@ -83,7 +83,7 @@ bool DlgChallenge::onAssignCCBMemberVariable(CCObject* pTarget, const char* pMem
 
 void DlgChallenge::onBtnStart(CCObject* pSender, CCControlEvent pCCControlEvent)
 {
-    Audio->playEffect("upgrade.m4a");
+    Audio->playEffect(EF_Upgrade);
 
     HBUmeng::event("Button", "ChellangeStart");
     HBUmeng::event("LevelSelect", fcs("%d", mCurLevel + 1));
@@ -97,7 +97,7 @@ void DlgChallenge::onBtnStart(CCObject* pSender, CCControlEvent pCCControlEvent)
 
 void DlgChallenge::onBtnLeft(CCObject* pSender, CCControlEvent pCCControlEvent)
 {
-    Audio->playEffect("Menu.wav");
+    Audio->playEffect(EF_Menu);
 
     mCurLevel--;
     _refreshLevel();
@@ -105,7 +105,7 @@ void DlgChallenge::onBtnLeft(CCObject* pSender, CCControlEvent pCCControlEvent)
 
 void DlgChallenge::onBtnRight(CCObject* pSender, CCControlEvent pCCControlEvent)
 {
-    Audio->playEffect("Menu.wav");
+    Audio->playEffect(EF_Menu);
 
     mCurLevel++;
     _refreshLevel();
@@ -113,7 +113,7 @@ void DlgChallenge::onBtnRight(CCObject* pSender, CCControlEvent pCCControlEvent)
 
 void DlgChallenge::onBtnClose(CCObject* pSender, CCControlEvent pCCControlEvent)
 {
-    Audio->playEffect("Menu.wav");
+    Audio->playEffect(EF_Menu);
     HBUmeng::event("Button", "ChellangeClose");
 
     mLayerBase->runAction(CCSequence::create(CCMoveTo::create(0.3, getPositionByPercent(0, 90)), CCCallFunc::create(this, callfunc_selector(DlgChallenge::_closeDialog)), NULL));

@@ -45,4 +45,9 @@ public:
     static void load();
 };
 
+#define EF_Menu     "sounds/menu.wav"
+#define EF_Done     "sounds/done.wav"
+#define EF_Tap      "sounds/tap.wav"
+#define EF_Upgrade  "sounds/upgrade.m4a"
+
 #endif

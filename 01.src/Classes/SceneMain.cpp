@@ -98,13 +98,13 @@ bool SceneMain::onAssignCCBMemberVariable(CCObject* pTarget, const char* pMember
 
 void SceneMain::onBtnBack(CCObject* pSender, CCControlEvent pCCControlEvent)
 {
-    Audio->playEffect("Menu.wav");
+    Audio->playEffect(EF_Menu);
     CCDirector::sharedDirector()->replaceScene(HBSceneLoader("SceneLogo", SceneLogoLoader::loader()));
 }
 
 void SceneMain::onBtnRetry(CCObject* pSender, CCControlEvent pCCControlEvent)
 {
-    Audio->playEffect("Menu.wav");
+    Audio->playEffect(EF_Menu);
 	_restart();
 }
 
@@ -119,7 +119,7 @@ void SceneMain::update(float dt)
             mLastTime = 0;
             mGameState = kStateResult;
             
-            Audio->playEffect("Done.wav");
+            Audio->playEffect(EF_Done);
             mFinish->runAction(CCSequence::create(CCSpawn::create(CCFadeIn::create(0.5), CCMoveBy::create(0.5, ccp(0, -50)), NULL), CCDelayTime::create(0.3), CCCallFunc::create(this, callfunc_selector(SceneMain::_showResult)), NULL));
         }
         
@@ -207,14 +207,14 @@ bool SceneMain::_checkTouch(CCTouch *pTouch)
         {
             case kStateNone:
                 _doTouch(0, pTouch);
-                Audio->playEffect("Tap.wav");
+                Audio->playEffect(EF_Tap);
                 mGameState = kStateBegin;
                 mLastTime = mLevelTime;
                 mTips->runAction(CCSpawn::create(CCFadeOut::create(0.3), CCMoveBy::create(0.3, ccp(0,50)), NULL));
                 break;
             case kStateBegin:
                 _doTouch(0, pTouch);
-                Audio->playEffect("Tap.wav");
+                Audio->playEffect(EF_Tap);
                 break;
             default:
                 break;
@@ -240,7 +240,7 @@ void SceneMain::_doTouch(int index, CCTouch* touch)
     if (gGameMode == kGameModeTest)
     {
         if (mTouchCount == mNextGoal)
-            Audio->playEffect("upgrade.m4a");
+            Audio->playEffect(EF_Upgrade);
         mAnimal->setScale(MIN(1.5, 0.2 + (float)mTouchCount / (float)mNextGoal * 0.6));
     }
     else if (mTouchCount >= mNextGoal)
@@ -250,7 +250,7 @@ void SceneMain::_doTouch(int index, CCTouch* touch)
         mNextGoal += 15 + (mCurrentLevel - 1);
         _updateTimeBar();
         _updateLevel();
-        Audio->playEffect("upgrade.m4a");
+        Audio->playEffect(EF_Upgrade);
     }
 }
 
@@ -287,7 +287,7 @@ void SceneMain::registerWithTouchDispatcher()
 void SceneMain::keyBackClicked()
 {
 #if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
-    Audio->playEffect("Menu.wav");
+    Audio->playEffect(EF_Menu);
     CCDirector::sharedDirector()->replaceScene(HBSceneLoader("SceneLogo", SceneLogoLoader::loader()));
 #endif // CC_PLATFORM_ANDROID
 }

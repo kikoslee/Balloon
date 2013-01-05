@@ -17,11 +17,12 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../Classes/SceneLogo.cpp \
                    ../../Classes/SceneMain.cpp \
                    ../../../../../HBCommon/HBCommon.cpp \
-                   ../../../../../HBCommon/android/HBCommon.cpp
+                   ../../../../../HBCommon/android/HBCommon_Android.cpp
                    
                    
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes \
-				   /Users/limin/Documents/Work/HBCommon \
+					$(LOCAL_PATH)/hellocpp \
+				    /Users/limin/Documents/Work/HBCommon \
 				   
 
 LOCAL_WHOLE_STATIC_LIBRARIES := cocos2dx_static cocosdenshion_static cocos_extension_static

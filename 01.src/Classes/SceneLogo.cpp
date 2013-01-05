@@ -68,14 +68,14 @@ bool SceneLogo::onAssignCCBMemberVariable(CCObject* pTarget, const char* pMember
 
 void SceneLogo::onBtnChallenge(CCObject* pSender, CCControlEvent pCCControlEvent)
 {
-    Audio->playEffect("Menu.wav");
+    Audio->playEffect(EF_Menu);
     HBUmeng::event("Button", "Chellange");
     CCDirector::sharedDirector()->getRunningScene()->addChild(HBLayerLoader("DlgChallenge", DlgChallengeLoader::loader()));
 }
 
 void SceneLogo::onBtnFree(CCObject* pSender, CCControlEvent pCCControlEvent)
 {
-    Audio->playEffect("Menu.wav");
+    Audio->playEffect(EF_Menu);
     HBUmeng::event("Button", "Classic");
     gGameMode = kGameModeNormal;
     CCDirector::sharedDirector()->replaceScene(HBSceneLoader("SceneMain", SceneMainLoader::loader()));
@@ -83,19 +83,16 @@ void SceneLogo::onBtnFree(CCObject* pSender, CCControlEvent pCCControlEvent)
 
 void SceneLogo::onBtnScore(CCObject* pSender, CCControlEvent pCCControlEvent)
 {
-    Audio->playEffect("Menu.wav");
+    Audio->playEffect(EF_Menu);
     HBUmeng::event("Button", "Leaderboard");
     HBScore::showBoard(gLeaderboardName);
 }
 
 void SceneLogo::onBtnMore(CCObject* pSender, CCControlEvent pCCControlEvent)
 {
-    Audio->playEffect("Menu.wav");    
+    Audio->playEffect(EF_Menu);    
     HBUmeng::event("Button", "MoreGames");
-#if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
-    gotoUrl("itms-apps://itunes.com/apps/limin");
-#else
-#endif
+    gotoMoreGame();
 }
 
 //for android

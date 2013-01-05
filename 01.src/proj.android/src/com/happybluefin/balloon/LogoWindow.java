@@ -1,3 +1,10 @@
+/**
+ * @brief   加载窗口类定义文件。
+ * @author  赵一
+ * @date    2012/01/07
+ * @version 0.1
+ */
+
 package com.happybluefin.balloon;
 
 import android.app.Activity;
@@ -9,18 +16,40 @@ import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.util.Log;
 
+import com.happybluefin.android.framework.store.SharePrefStore;
+import com.happybluefin.android.framework.utility.system.Desktop;
 import com.happybluefin.android.framework.window.WindowManager;
 
+/**
+ * @brief  加载窗口类。
+ * @author 赵一
+ * @note   提供复选列表对话框的显示与关闭处理。
+ */
 public class LogoWindow extends Activity {
+    /**
+     * @brief     窗口建立函数。
+     * @param[in] savedInstanceState 保存状态。
+     */
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //Log.d(TAG, "onCreate() start");
+
+        //建立桌面快捷方式
+        _addSesktopShortcut();
 
         //初始化控件
         _initView();
+
+        //Log.d(TAG, "onCreate() end");
     }
 
+    /**
+     * @brief  初始化控件函数。
+     */
     private void _initView() {
+        //Log.d(TAG, "_initView() start");
+
         //加载窗口布局
         setContentView(R.layout.logowindow);
 
@@ -64,9 +93,16 @@ public class LogoWindow extends Activity {
 
         //启动动画
         mImageViewLogo.startAnimation(mAnimAlphaShow);
+
+        //Log.d(TAG, "_initView() end");
     }
 
+    /**
+     * @brief  启动游戏窗口函数。
+     */
     private void _startGameWindow() {
+        //Log.d(TAG, "_startTapBurstFreeWindow() start");
+
         //打开游戏窗口
         if (WindowManager.startWindow(this, GameWindow.class) != true) {
             Log.e(TAG, "_startMainWindow(): start GameWindow failed!");
@@ -76,6 +112,30 @@ public class LogoWindow extends Activity {
         if (WindowManager.closeWindow(this) != true) {
             Log.e(TAG, "_startMainWindow(): close LogoWindow failed!");
         }
+
+        //Log.d(TAG, "_startMainWindow() end");
+    }
+
+    /**
+     * @brief  添加快捷方式函数。
+     */
+    private void _addSesktopShortcut() {
+        //Log.d(TAG, "_addSesktopShortcut() start");
+
+        //建立桌面快捷方式
+        boolean flag = SharePrefStore.getBoolean(this, IS_FIRST_START_FLAG, false);
+        if (flag != true) {
+            //第一次进入游戏建立快捷方式
+            if (Desktop.addShortcut(this,
+                                    getString(R.string.app_name),
+                                    LogoWindow.class,
+                                    R.drawable.icon) != true) {
+                Log.e(TAG, "_addSesktopShortcut(): add shortcut failed!");
+            }
+            SharePrefStore.setBoolean(this, IS_FIRST_START_FLAG, true);
+        }
+
+        //Log.d(TAG, "_addSesktopShortcut() end");
     }
 
     /**
@@ -92,6 +152,11 @@ public class LogoWindow extends Activity {
      * @brief Logo图标隐藏动画。
      */
     private AlphaAnimation mAnimAlphaHide = new AlphaAnimation(1.0f, 0.0f);
+
+    /**
+     * @brief 是否第一次进入游戏的数值判断键值。
+     */
+    private static final String IS_FIRST_START_FLAG = "IsFirstStartFlag";
 
     /**
      * @brief 动画时间长度。
