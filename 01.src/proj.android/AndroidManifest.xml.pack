@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.happybluefin.balloon"
+      android:versionCode="1"
+      android:versionName="1.0">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+
+    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="10"/>
+
+    <application android:label="@string/app_name"
+        android:icon="@drawable/icon"
+        android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+        android:name=".balloon">
+
+        <!-- 游戏核心各种定义 start -->
+        <activity android:name=".LogoWindow"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".GameWindow"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation" >
+        </activity>
+        
+        <!-- Scoreloop ui define start -->
+        <activity android:name="com.scoreloop.client.android.ui.component.achievement.AchievementHeaderActivity"/>
+        <activity android:name="com.scoreloop.client.android.ui.component.achievement.AchievementListActivity"/>
+        <activity android:name="com.scoreloop.client.android.ui.component.news.NewsHeaderActivity"/>
+        <activity android:name="com.scoreloop.client.android.ui.component.news.NewsListActivity"/>
+        <activity android:name="com.scoreloop.client.android.ui.component.challenge.ChallengeHeaderActivity"/>
+        <activity android:name="com.scoreloop.client.android.ui.component.challenge.ChallengeListActivity"/>
+        <activity android:name="com.scoreloop.client.android.ui.component.challenge.ChallengeAcceptListActivity"/>
+        <activity android:name="com.scoreloop.client.android.ui.component.challenge.ChallengeCreateListActivity"/>
+        <activity android:name="com.scoreloop.client.android.core.ui.ProxyActivity" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" android:configChanges="orientation|keyboard|keyboardHidden|screenSize|smallestScreenSize"/>
+        <!-- Note: you may need to add more entries here for the payment methods you want to use. -->
+
+        <!-- Defining the ScoreloopUI activities -->
+        <activity android:name="com.scoreloop.client.android.ui.EntryScreenActivity" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+<!--         <activity android:name="com.scoreloop.client.android.ui.ShowResultOverlayActivity" android:theme="@style/sl_dialog"/>
+ -->
+        <activity android:name="com.scoreloop.client.android.ui.component.market.MarketHeaderActivity"/>
+        <activity android:name="com.scoreloop.client.android.ui.component.market.MarketListActivity"/>
+        <activity android:name="com.scoreloop.client.android.ui.component.entry.EntryListActivity"/>
+<!--         <activity android:name="com.scoreloop.client.android.ui.component.post.PostOverlayActivity" android:theme="@style/sl_dialog"/>
+ -->        <activity android:name="com.scoreloop.client.android.ui.component.score.ScoreHeaderActivity"/>
+        <activity android:name="com.scoreloop.client.android.ui.component.score.ScoreListActivity"/>
+        <activity android:name="com.scoreloop.client.android.ui.component.user.UserAddBuddyListActivity"/>
+        <activity android:name="com.scoreloop.client.android.ui.component.user.UserHeaderActivity"/>
+        <activity android:name="com.scoreloop.client.android.ui.component.user.UserDetailListActivity"/>
+        <activity android:name="com.scoreloop.client.android.ui.component.user.UserListActivity"/>
+        <activity android:name="com.scoreloop.client.android.ui.component.game.GameDetailHeaderActivity"/>
+        <activity android:name="com.scoreloop.client.android.ui.component.game.GameDetailListActivity"/>
+        <activity android:name="com.scoreloop.client.android.ui.component.game.GameListActivity"/>
+        <activity android:name="com.scoreloop.client.android.ui.component.profile.ProfileSettingsListActivity"/>
+        <activity android:name="com.scoreloop.client.android.ui.component.profile.ProfileSettingsPictureListActivity"/>
+        <activity android:name="com.scoreloop.client.android.ui.LeaderboardsScreenActivity" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+
+        <activity android:name="com.scoreloop.client.android.ui.framework.ScreenActivity" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+        <activity android:name="com.scoreloop.client.android.ui.framework.TabsActivity"/>
+        <!-- Scoreloop ui define end -->
+
+		<!-- AdMob -->
+        <activity android:name="com.google.ads.AdActivity"
+			android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
+
+        <!-- 友盟 -->
+        <meta-data android:value="50e694535270154ec5000003" android:name="UMENG_APPKEY" />
+        <!-- 测试 渠道 -->
+        <meta-data android:value="Test Mode" android:name="UMENG_CHANNEL"/>
+
+    </application>
+    <supports-screens android:largeScreens="true"
+                      android:smallScreens="true"
+                      android:anyDensity="true"
+                      android:normalScreens="true"/>
+</manifest> 

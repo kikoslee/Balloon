@@ -1,0 +1,19 @@
+/Users/limin/Documents/Work/TinyGame/Balloon/01.src/proj.android/gen/com/happybluefin/balloon/R.java \
+ : /Users/limin/Documents/Work/TinyGame/Balloon/01.src/proj.android/res/drawable-hdpi/icon.png \
+/Users/limin/Documents/Work/TinyGame/Balloon/01.src/proj.android/res/drawable-hdpi/logo.png \
+/Users/limin/Documents/Work/TinyGame/Balloon/01.src/proj.android/res/drawable-ldpi/icon.png \
+/Users/limin/Documents/Work/TinyGame/Balloon/01.src/proj.android/res/drawable-mdpi/icon.png \
+/Users/limin/Documents/Work/TinyGame/Balloon/01.src/proj.android/res/drawable-xhdpi/icon.png \
+/Users/limin/Documents/Work/TinyGame/Balloon/01.src/proj.android/res/layout/logowindow.xml \
+/Users/limin/Documents/Work/TinyGame/Balloon/01.src/proj.android/res/values/strings.xml \
+/Users/limin/Documents/Work/TinyGame/Balloon/01.src/proj.android/res/values-en-rUS/strings.xml \
+/Users/limin/Documents/Work/TinyGame/Balloon/01.src/proj.android/res/values-ja-rJP/strings.xml \
+/Users/limin/Documents/Work/TinyGame/Balloon/01.src/proj.android/res/values-zh/strings.xml \
+/Users/limin/Documents/Work/TinyGame/Balloon/01.src/proj.android/res/values-zh-rCN/strings.xml \
+/Users/limin/Documents/Work/TinyGame/Balloon/01.src/proj.android/res/values-zh-rTW/strings.xml \
+/Users/limin/Documents/Work/TinyGame/Balloon/01.src/proj.android/bin/res/drawable-hdpi/icon.png \
+/Users/limin/Documents/Work/TinyGame/Balloon/01.src/proj.android/bin/res/drawable-hdpi/logo.png \
+/Users/limin/Documents/Work/TinyGame/Balloon/01.src/proj.android/bin/res/drawable-ldpi/icon.png \
+/Users/limin/Documents/Work/TinyGame/Balloon/01.src/proj.android/bin/res/drawable-mdpi/icon.png \
+/Users/limin/Documents/Work/TinyGame/Balloon/01.src/proj.android/bin/res/drawable-xhdpi/icon.png \
+/Users/limin/Documents/Work/TinyGame/Balloon/01.src/proj.android/bin/AndroidManifest.xml \
