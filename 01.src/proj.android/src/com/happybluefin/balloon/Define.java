@@ -59,6 +59,11 @@ public class Define {
         public static final int GOTO_REVIEW = 0x5;
 
         /**
+         * @brief 消息ID（更多游戏）。
+         */
+        public static final int GOTO_MOREGAME = 0x6;
+
+        /**
          * @brief 消息ID（退出应用）。
          */
         public static final int EXIT_APPLICATION = 0xff;

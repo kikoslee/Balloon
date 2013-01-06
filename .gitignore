@@ -5,9 +5,16 @@
 *.xcscheme
 
 01.src/proj.android/obj/*
-01.src/proj.android/assets/imageshd/*
-01.src/proj.android/assets/sheet.tps
-01.src/proj.android/assets/sounds/*
 01.src/proj.android/bin/*
-
+01.src/proj.android/gen/*
+01.src/proj.android/assets/imageshd/*
+01.src/proj.android/assets/sounds/*
 01.src/proj.android/libs/armeabi/libgame.so
+01.src/proj.android/dependence/ScoreloopUI/.settings
+01.src/proj.android/dependence/ScoreloopUI/bin/*
+01.src/proj.android/dependence/ScoreloopUI/obj/*
+01.src/proj.android/dependence/ScoreloopUI/gen/*
+01.src/proj.android/dependence/framework/.settings
+01.src/proj.android/dependence/framework/bin/*
+01.src/proj.android/dependence/framework/obj/*
+01.src/proj.android/dependence/framework/gen/*

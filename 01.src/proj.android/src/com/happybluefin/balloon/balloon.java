@@ -32,13 +32,13 @@ public class balloon extends Application {
 	/**
      * @brief  取得设备语言编码。
      */
-	private native int nativeSetLang(String a);
+    public static native int nativeSetLang(String a);
 	
     /**
      * @brief  取得ScoreLoopID函数。
      * @return ScoreLoopID。
      */
-	private native String getScoreLoopSecretID();
+    public static native String getScoreLoopSecretID();
 	
     /**
      * @brief  应用程序建立函数。
@@ -150,6 +150,20 @@ public class balloon extends Application {
      * @param[in] context 上下文。
      */
     public static void gotoMoreGame() {
+        //Log.d(TAG, "gotoMoreGame() start");
+
+        if (mContext != null) {
+            Bundle bundle = new Bundle();
+            Intent intent = new Intent(Define.Action.ACTION);
+            bundle.putInt("TYPE", Define.MessageID.GOTO_MOREGAME);
+            intent.putExtras(bundle);
+            mContext.sendBroadcast(intent);
+        }
+        else {
+            Log.e(TAG, "gotoMoreGame(): mContext is NULL.");
+        }
+
+        //Log.d(TAG, "gotoMoreGame() end");
     }
     
     /**

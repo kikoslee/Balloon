@@ -8,13 +8,18 @@
 #define PACKAGE com_happybluefin_balloon
 
 //这里的宏一定要这样定义，才能合成出正确的函数名称
-#define NAME(CLASS, FUNC) Java_##PACKAGE##_CLASS_##FUNC
+#define NAME3(PACKAGE3, CLASS3, FUNC3) Java_##PACKAGE3##_##CLASS3##_##FUNC3
+#define NAME2(PACKAGE2, CLASS2, FUNC2) NAME3(PACKAGE2, CLASS2, FUNC2)
+#define NAME(CLASS, FUNC) NAME2(PACKAGE, CLASS, FUNC)
 
 #define  LOG_TAG    "main"
 #define  LOGD(...)  __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, __VA_ARGS__)
 #define  LOGE(...)  __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
 
 using namespace cocos2d;
+
+extern "C"
+{
 
 jint JNI_OnLoad(JavaVM *vm, void *reserved) {
     JniHelper::setJavaVM(vm);
@@ -234,8 +239,40 @@ void gotoReview() {
 
 void gotoMoreGame()
 {	
-// http://play.google.com/store/search?q=pub:<publisher_name>
-// market://search?q=pub:<publisher_name>
+    LOGD("gotoMoreGame() start");
+
+    char* ret = NULL;
+
+    JNIEnv* env = NULL;
+    JavaVM *vm = NULL;
+    int state;
+
+    vm = JniHelper::getJavaVM();
+    if (vm != NULL) {
+        state = vm->GetEnv((void**)&env, JNI_VERSION_1_4);
+        if (state < 0) {
+            LOGE("gotoMoreGame(): GetEnv() failed");
+            LOGD("gotoMoreGame() end");
+        }
+
+        jclass cls = env->FindClass("com/happybluefin/balloon/balloon");
+        if (!cls) {
+            LOGE("gotoMoreGame(): FindClass() failed");
+            LOGD("gotoMoreGame() end");
+        }
+
+        jmethodID gotoMoreGame = env->GetStaticMethodID(cls, "gotoMoreGame", "()V");
+        if (!gotoReview) {
+            LOGE("gotoMoreGame(): GetStaticMethodID() failed");
+            LOGD("gotoMoreGame() end");
+        }
+
+        jstring str = (jstring)env->CallStaticObjectMethod(cls, gotoMoreGame);
+
+        ret = jstringTostring(env, str);
+    }
+
+    LOGD("gotoMoreGame() end");
 }
 
 int umengGetParamValue(const char* name) {
@@ -266,7 +303,7 @@ int umengGetParamValue(const char* name) {
                 return ret;
             }
 
-            jmethodID getParamValue = env->GetStaticMethodID(cls, "getParamValue", "(Ljava/lang/String;)I");
+            jmethodID getParamValue = env->GetStaticMethodID(cls, "umengGetParamValue", "(Ljava/lang/String;)I");
             if (!getParamValue) {
                 LOGE("umengGetParamValue(): GetStaticMethodID() failed");
                 LOGD("umengGetParamValue() end");
@@ -315,7 +352,7 @@ void umengCustomEvent(const char* name, const char* value) {
                 return;
             }
 
-            jmethodID customEvent = env->GetStaticMethodID(cls, "customEvent", "(Ljava/lang/String;Ljava/lang/String;)V");
+            jmethodID customEvent = env->GetStaticMethodID(cls, "umengCustomEvent", "(Ljava/lang/String;Ljava/lang/String;)V");
             if (!customEvent) {
                 LOGE("umengCustomEvent(): GetStaticMethodID() failed");
                 LOGD("umengCustomEvent() end");
@@ -335,7 +372,8 @@ void umengCustomEvent(const char* name, const char* value) {
 }
 
 //获取语言
-jint NAME(balloon, nativeSetLang)(JNIEnv *env, jobject thiz, jstring a) {
+jint NAME(balloon, nativeSetLang)(JNIEnv *env, jobject thiz, jstring a)
+{
 	char* re ;
 	re = jstringTostring(env , a);
 
@@ -357,4 +395,6 @@ jstring NAME(balloon, getAdmobUnitID)(JNIEnv *env, jclass cls) {
 jstring NAME(balloon, getScoreLoopSecretID)(JNIEnv *env, jclass cls) {
     jstring ret = env->NewStringUTF("OjFhhWGwxI5KtyK7NBC0m7tNs9BgmTrbWugcbGxSlyNXKot5qK5W/g==");
     return ret;
+}
+
 }

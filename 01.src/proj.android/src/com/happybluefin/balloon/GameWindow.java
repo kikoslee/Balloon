@@ -197,6 +197,21 @@ public class GameWindow extends Cocos2dxActivity {
                     }
                     break;
                 }
+                case Define.MessageID.GOTO_MOREGAME: {
+                    //提交评价
+                    if (Network.getConnectivityState(GameWindow.this) == true) {
+                        if (Comment.gotoMoreGame(GameWindow.this) != true) {
+                            Log.e(TAG, "BroadcastReceiver::onReceive(): moregame failed!");
+                        }
+                    }
+                    else {
+                        //提示连接网络
+                        Toast.makeText(GameWindow.this,
+                                       R.string.can_not_connect_network,
+                                       Toast.LENGTH_SHORT).show();
+                    }
+                    break;
+                }
 				}
             }
 

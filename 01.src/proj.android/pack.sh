@@ -6,6 +6,18 @@ direc=$(pwd)
 projName=balloon
 #echo $direc  
 
+#拷贝xml文件
+cp AndroidManifest.xml AndroidManifest.xm_
+cp AndroidManifest.xml.pack AndroidManifest.xml
+#set new versionCode 
+versionCode=$(printf "android:versionCode=%s%s%s" '"' "$1" '"')
+#set new versionName
+versionName=$(printf "android:versionName=%s%s%s" '"' "$2" '">')
+#replace new versionCode
+sed -e 's/android:versionCode.*/'"$versionCode"'/g' -i "" AndroidManifest.xml 
+#replace new versionName
+sed -e 's/android:versionName.*/'"$versionName"'/g' -i "" AndroidManifest.xml
+
 #遍历当前路径下pack文件夹内的所有文件
 for dir2del in $direc/pack/* ; do
     #file is a directory
@@ -20,18 +32,8 @@ for dir2del in $direc/pack/* ; do
 			#该文件夹内含有apk则不打包，输入该apk的路径加名称
 			echo $apkName
 		else
-			#拷贝xml文件
-			cp AndroidManifest.xml.pack AndroidManifest.xml
-			#set new versionCode 
-			versionCode=$(printf "android:versionCode=%s%s%s" '"' "$1" '"')
-			#set new versionName
-			versionName=$(printf "android:versionName=%s%s%s" '"' "$2" '">')
-			#replace new versionCode
-			sed -i 's/android:versionCode.*/'"$versionCode"'/g' AndroidManifest.xml 
-			#replace new versionName
-			sed -i 's/android:versionName.*/'"$versionName"'/g' AndroidManifest.xml
 			#replace umeng channel
-			sed -i "s/__UC__/"$direcName"/g" AndroidManifest.xml
+			sed -e "s/__UC__/"$direcName"/g" -i "" AndroidManifest.xml
 			#start packing
 			ant release 
 			#将打包好的apk拷到该文件夹内
@@ -40,3 +42,5 @@ for dir2del in $direc/pack/* ; do
     fi  
 done 
 
+#拷贝xml文件
+#cp AndroidManifest.xm_ AndroidManifest.xml

@@ -11,6 +11,9 @@
 
 #include <jni.h>
 
+extern "C"
+{
+
 void showLeaderBoard(const char* boardName);
 void reportScore(const char* boardName, int score);
 
@@ -20,4 +23,5 @@ void gotoReview();
 int umengGetParamValue(const char* name);
 void umengCustomEvent(const char* name, const char* value);
 
+}
 #endif // _Main_H_
