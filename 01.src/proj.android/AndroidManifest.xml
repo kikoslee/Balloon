@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
       package="com.happybluefin.balloon"
-      android:versionCode="101"
-      android:versionName="1.0.1">
+      android:versionCode="100"
+      android:versionName="1.0.0">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
@@ -35,6 +35,14 @@
         </activity>
         
         <!-- Scoreloop ui define start -->
+		<activity android:name="com.scoreloop.client.android.ui.PostScoreOverlayActivity" android:theme="@style/sl_dialog"/>
+		<activity android:name="com.scoreloop.client.android.ui.BuddiesScreenActivity" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+		<activity android:name="com.scoreloop.client.android.ui.ChallengesScreenActivity" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+		<activity android:name="com.scoreloop.client.android.ui.AchievementsScreenActivity" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+		<activity android:name="com.scoreloop.client.android.ui.SocialMarketScreenActivity" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+		<activity android:name="com.scoreloop.client.android.ui.ProfileScreenActivity" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+		<activity android:name="com.scoreloop.client.android.ui.GameItemPaymentScreenActivity" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+
         <activity android:name="com.scoreloop.client.android.ui.component.achievement.AchievementHeaderActivity"/>
         <activity android:name="com.scoreloop.client.android.ui.component.achievement.AchievementListActivity"/>
         <activity android:name="com.scoreloop.client.android.ui.component.news.NewsHeaderActivity"/>
@@ -49,6 +57,7 @@
         <!-- Defining the ScoreloopUI activities -->
         <activity android:name="com.scoreloop.client.android.ui.EntryScreenActivity" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
         <activity android:name="com.scoreloop.client.android.ui.ShowResultOverlayActivity" android:theme="@style/sl_dialog"/>
+        <activity android:name="com.scoreloop.client.android.ui.LeaderboardsScreenActivity" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
         <activity android:name="com.scoreloop.client.android.ui.component.market.MarketHeaderActivity"/>
         <activity android:name="com.scoreloop.client.android.ui.component.market.MarketListActivity"/>
         <activity android:name="com.scoreloop.client.android.ui.component.entry.EntryListActivity"/>
@@ -64,7 +73,6 @@
         <activity android:name="com.scoreloop.client.android.ui.component.game.GameListActivity"/>
         <activity android:name="com.scoreloop.client.android.ui.component.profile.ProfileSettingsListActivity"/>
         <activity android:name="com.scoreloop.client.android.ui.component.profile.ProfileSettingsPictureListActivity"/>
-        <activity android:name="com.scoreloop.client.android.ui.LeaderboardsScreenActivity" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
 
         <activity android:name="com.scoreloop.client.android.ui.framework.ScreenActivity" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
         <activity android:name="com.scoreloop.client.android.ui.framework.TabsActivity"/>

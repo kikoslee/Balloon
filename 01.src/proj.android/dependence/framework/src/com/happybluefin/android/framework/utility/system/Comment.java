@@ -11,6 +11,7 @@
  */
 package com.happybluefin.android.framework.utility.system;
 
+import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
@@ -78,18 +79,18 @@ public class Comment {
      * @return    true    成功。
      * @return    false   失败。
      */
-    public static boolean gotoMoreGame(final Context context) {
+    public static boolean gotoMoreGame(final Activity window) {
         //Log.d(TAG, "gotoMoreGame() start");
 
         boolean result = false;
 
-        if (context != null) {
+        if (window != null) {
             try {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse("market://search?q=pub:HappyBluefin"));
-                if (_startWindow(context, intent) != true) {
+                if (_startWindowByActivity(window, intent) != true) {
                     intent.setData(Uri.parse("http://play.google.com/store/search?q=pub:HappyBluefin"));
-                    if (_startWindow(context, intent) != true) {
+                    if (_startWindowByActivity(window, intent) != true) {
                         Log.e(TAG, "gotoMoreGame(): _startWindow() error");
                     }
                     else {
@@ -134,6 +135,42 @@ public class Comment {
         if (context != null) {
             try {
                 context.startActivity(intent);
+                result = true;
+            }
+            catch (ActivityNotFoundException e) {
+                e.printStackTrace();
+                result = false;
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+                result = false;
+            }
+        }
+        else {
+            Log.e(TAG, "_startWindow(): context is null.");
+        }
+
+        //Log.d(TAG, "_startWindow() end");
+
+        return result;
+    }
+
+    /**
+     * @brief     启动启动窗口函数。
+     * @author    赵一
+     * @param[in] context 上下文。
+     * @param[in] name    应用在Google Play中的名称。
+     * @return    true    成功。
+     * @return    false   失败。
+     */
+    private static boolean _startWindowByActivity(final Activity window, final Intent intent) {
+        //Log.d(TAG, "_startWindow() start");
+
+        boolean result = false;
+
+        if (window != null) {
+            try {
+            	window.startActivityForResult(intent, 1);
                 result = true;
             }
             catch (ActivityNotFoundException e) {

@@ -14,6 +14,7 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.widget.Toast;
 
 import org.cocos2dx.lib.Cocos2dxActivity;
@@ -101,6 +102,30 @@ public class GameWindow extends Cocos2dxActivity {
 
         //Log.d(TAG, "onResume() end");
     }
+        
+    /**
+     * @brief     按键处理函数。
+     * @param[in] keyCode 按键键值。
+     * @param[in] event   事件。
+     */
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        //Log.d(TAG, "onKeyDown() start");
+        boolean result = false;
+
+        if(keyCode == KeyEvent.KEYCODE_BACK) {
+            //什么也不做，将result设置为true，不让系统处理该按键
+
+            result = true;
+        }
+        else {
+            result = super.onKeyDown(keyCode, event);
+        }
+
+        //Log.d(TAG, "onKeyDown() end");
+
+        return result;
+    }    
 
     /**
      * @brief  初始化控件函数。
@@ -200,7 +225,8 @@ public class GameWindow extends Cocos2dxActivity {
                 case Define.MessageID.GOTO_MOREGAME: {
                     //提交评价
                     if (Network.getConnectivityState(GameWindow.this) == true) {
-                        if (Comment.gotoMoreGame(GameWindow.this) != true) {
+//                        if (Comment.gotoMoreGame(GameWindow.this) != true) {
+                    	if (Comment.gotoMoreGame(GameWindow.this) != true) {
                             Log.e(TAG, "BroadcastReceiver::onReceive(): moregame failed!");
                         }
                     }
