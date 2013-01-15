@@ -30,7 +30,7 @@ DlgScore::~DlgScore()
 
 void DlgScore::onNodeLoaded(CCNode* pNode, CCNodeLoader* pNodeLoader)
 {
-    mLabelScore = createLabelAtlas(fcs("%d", gCurScore), "font_number.png", 112, 148, '0', 0, 0, gAnchorCenter, mLayerScore);
+    mLabelScore = HBcreateLabelAtlas(fcs("%d", gCurScore), "font_number.png", 112, 148, '0', 0, 0, gAnchorCenter, mLayerScore);
 
     if (kGameModeTest == gGameMode)
     {
@@ -121,7 +121,7 @@ bool DlgScore::onAssignCCBMemberVariable(CCObject* pTarget, const char* pMemberV
 void DlgScore::onBtnRetry(CCObject* pSender, CCControlEvent pCCControlEvent)
 {
     Audio->playEffect(EF_Menu);
-    mLayerBase->runAction(CCSequence::create(CCMoveTo::create(0.3, getPositionByPercent(0, 90)), CCCallFunc::create(this, callfunc_selector(DlgScore::_closeDialog)), NULL));
+    mLayerBase->runAction(CCSequence::create(CCMoveTo::create(0.3, HBgetPositionByPercent(0, 90)), CCCallFunc::create(this, callfunc_selector(DlgScore::_closeDialog)), NULL));
 }
 
 void DlgScore::_closeDialog()

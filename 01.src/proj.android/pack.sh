@@ -8,7 +8,6 @@ projName=balloon
 
 #拷贝xml文件
 cp AndroidManifest.xml AndroidManifest.xm_
-cp AndroidManifest.xml.pack AndroidManifest.xml
 #set new versionCode 
 versionCode=$(printf "android:versionCode=%s%s%s" '"' "$1" '"')
 #set new versionName
@@ -20,6 +19,7 @@ sed -e 's/android:versionName.*/'"$versionName"'/g' -i "" AndroidManifest.xml
 
 #遍历当前路径下pack文件夹内的所有文件
 for dir2del in $direc/pack/* ; do
+	cp AndroidManifest.xml.pack AndroidManifest.xml
     #file is a directory
     if [ -d $dir2del ]; then
 		#获取文件夹的名称
@@ -37,10 +37,16 @@ for dir2del in $direc/pack/* ; do
 			#start packing
 			ant release 
 			#将打包好的apk拷到该文件夹内
-			cp bin/balloon-release.apk $apkName
+			destName=$(printf "%s/package/%s_%s_%s.apk" $direc $projName $direcName "$2" )
+			echo $destName
+			cp bin/balloon-release.apk $destName
+#			cp AndroidManifest.xml AndroidManifest.$direcName
 		fi
     fi  
 done 
+
+cp AndroidManifest.xm_ AndroidManifest.xml
+rm AndroidManifest.xm_
 
 #拷贝xml文件
 #cp AndroidManifest.xm_ AndroidManifest.xml

@@ -31,13 +31,17 @@ void SceneLogo::onNodeLoaded(CCNode* pNode, CCNodeLoader* pNodeLoader)
     mBtnFree->setTitleForState(ccs(gls("Free Mode")), CCControlStateNormal);
     mBtnScore->setTitleForState(ccs(gls("Score")), CCControlStateNormal);
     mBtnMore->setTitleForState(ccs(gls("More")), CCControlStateNormal);
+
+#if HBCHANNEL == 2
+    mBtnMore->setVisible(false);
+#endif
     
     for (int i = 0; i < 10; i++)
     {
         if (gLevelDetail[i].isClear)
-            createImageWithFrameName("icon_medal.png", -4.5 + (i - 4) * 9, 0, mLayerMadel);
+            HBcreateImageWithFrameName("icon_medal.png", -4.5 + (i - 4) * 9, 0, mLayerMadel);
         else
-            createImageWithFrameName("icon_medal_d.png", -4.5 + (i - 4) * 9, 0, mLayerMadel);
+            HBcreateImageWithFrameName("icon_medal_d.png", -4.5 + (i - 4) * 9, 0, mLayerMadel);
     }
 }
 

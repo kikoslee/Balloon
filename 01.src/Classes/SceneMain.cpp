@@ -56,7 +56,7 @@ void SceneMain::onNodeLoaded(CCNode* pNode, CCNodeLoader* pNodeLoader)
     mTimeValue->setZOrder(100);
     
     // Score
-    mScoreTotal = createLabelAtlas(fcs("%d", 0), "font_number.png", 112, 148, '0', 0, 20, gAnchorCenter, mLayerAnimal);
+    mScoreTotal = HBcreateLabelAtlas(fcs("%d", 0), "font_number.png", 112, 148, '0', 0, 20, gAnchorCenter, mLayerAnimal);
     mScoreTotal->setZOrder(200);
     
     if (gGameMode == kGameModeTest)
@@ -180,7 +180,7 @@ void SceneMain::_restart()
 	mTimeValue->setString(fcs("%.02f", mLevelTime));
 	mScoreTotal->setString("0");
     
-    mTips->setPosition(getPositionByPercent(50, 50));
+    mTips->setPosition(HBgetPositionByPercent(50, 50));
 	mTips->setOpacity(255);
     mTips->setColor(ccYELLOW);
     mTips->runAction(CCRepeatForever::create((CCActionInterval*)CCSequence::create(CCTintTo::create(1, 0, 0, 255), CCTintTo::create(1, 255, 255, 0), NULL)));
@@ -188,7 +188,7 @@ void SceneMain::_restart()
 	mTouchCount = 0;
 	mGameState = kStateNone;
     
-	mFinish->setPosition(getPositionByPercent(50, 80));
+	mFinish->setPosition(HBgetPositionByPercent(50, 80));
 	mFinish->setOpacity(0);
     
     mLabelHigh->setString(fcs("%s:%d", gls("High"), gHighScore));

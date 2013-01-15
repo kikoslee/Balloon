@@ -57,7 +57,7 @@ void DlgReview::onBtnReview(CCObject* pSender, CCControlEvent pCCControlEvent)
     HBUmeng::event("Button", "GoReview");
     gIsReviewd = true;
     GlobalData::save();
-    mLayerBase->runAction(CCSequence::create(CCMoveTo::create(0.3, getPositionByPercent(0, 90)), CCCallFunc::create(this, callfunc_selector(DlgReview::_closeDialogWithReview)), NULL));
+    mLayerBase->runAction(CCSequence::create(CCMoveTo::create(0.3, HBgetPositionByPercent(0, 90)), CCCallFunc::create(this, callfunc_selector(DlgReview::_closeDialogWithReview)), NULL));
 }
 
 void DlgReview::onBtnClose(CCObject* pSender, CCControlEvent pCCControlEvent)
@@ -66,7 +66,7 @@ void DlgReview::onBtnClose(CCObject* pSender, CCControlEvent pCCControlEvent)
     
     gCurReviewCount = 10;
     GlobalData::save();
-    mLayerBase->runAction(CCSequence::create(CCMoveTo::create(0.3, getPositionByPercent(0, 90)), CCCallFunc::create(this, callfunc_selector(DlgReview::_closeDialog)), NULL));
+    mLayerBase->runAction(CCSequence::create(CCMoveTo::create(0.3, HBgetPositionByPercent(0, 90)), CCCallFunc::create(this, callfunc_selector(DlgReview::_closeDialog)), NULL));
 }
 
 void DlgReview::_closeDialog()

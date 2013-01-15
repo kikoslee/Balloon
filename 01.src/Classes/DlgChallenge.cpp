@@ -116,7 +116,7 @@ void DlgChallenge::onBtnClose(CCObject* pSender, CCControlEvent pCCControlEvent)
     Audio->playEffect(EF_Menu);
     HBUmeng::event("Button", "ChellangeClose");
 
-    mLayerBase->runAction(CCSequence::create(CCMoveTo::create(0.3, getPositionByPercent(0, 90)), CCCallFunc::create(this, callfunc_selector(DlgChallenge::_closeDialog)), NULL));
+    mLayerBase->runAction(CCSequence::create(CCMoveTo::create(0.3, HBgetPositionByPercent(0, 90)), CCCallFunc::create(this, callfunc_selector(DlgChallenge::_closeDialog)), NULL));
 }
 
 void DlgChallenge::_refreshLevel()
