@@ -4,6 +4,7 @@
 *.xcuserdatad
 *.xcscheme
 
+*.apk
 01.src/proj.android/obj/*
 01.src/proj.android/bin/*
 01.src/proj.android/gen/*

@@ -319,7 +319,7 @@
 		EE1D1A2D168DF65100D9CB93 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1D1A2C168DF65100D9CB93 /* libsqlite3.dylib */; };
 		EE1D1A2F168DF65800D9CB93 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1D1A2E168DF65800D9CB93 /* MessageUI.framework */; };
 		EE1D1A31168DFCEC00D9CB93 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1D1A30168DFCEC00D9CB93 /* StoreKit.framework */; };
-		EE1D1A37168DFD4800D9CB93 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1D1A36168DFD4800D9CB93 /* AdSupport.framework */; };
+		EE1D1A37168DFD4800D9CB93 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1D1A36168DFD4800D9CB93 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		EE1D1A3A168E050300D9CB93 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BFA75229167653F300EEE5A8 /* AppController.mm */; };
 		EE1D1A3B168E050300D9CB93 /* RootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BFA7522C167653F300EEE5A8 /* RootViewController.mm */; };
 		EE1D1A3C168E050300D9CB93 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA7522E167653F300EEE5A8 /* main.m */; };
@@ -516,7 +516,7 @@
 		EE1D1AFB168E050300D9CB93 /* MobisageFullScreenAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1D193D168DF52F00D9CB93 /* MobisageFullScreenAdViewController.m */; };
 		EE1D1AFC168E050300D9CB93 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1D1940168DF52F00D9CB93 /* JSONKit.m */; };
 		EE1D1AFD168E050300D9CB93 /* BannerAdViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = EE1D1A22168DF57600D9CB93 /* BannerAdViewController.mm */; };
-		EE1D1AFF168E050300D9CB93 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1D1A36168DFD4800D9CB93 /* AdSupport.framework */; };
+		EE1D1AFF168E050300D9CB93 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1D1A36168DFD4800D9CB93 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		EE1D1B00168E050300D9CB93 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1D1A30168DFCEC00D9CB93 /* StoreKit.framework */; };
 		EE1D1B01168E050300D9CB93 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1D1A2E168DF65800D9CB93 /* MessageUI.framework */; };
 		EE1D1B02168E050300D9CB93 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1D1A2C168DF65100D9CB93 /* libsqlite3.dylib */; };
@@ -834,7 +834,7 @@
 		EECABE36169B4DBC0089AF51 /* MobisageFullScreenAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1D193D168DF52F00D9CB93 /* MobisageFullScreenAdViewController.m */; };
 		EECABE37169B4DBC0089AF51 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = EE1D1940168DF52F00D9CB93 /* JSONKit.m */; };
 		EECABE38169B4DBC0089AF51 /* BannerAdViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = EE1D1A22168DF57600D9CB93 /* BannerAdViewController.mm */; };
-		EECABE3A169B4DBC0089AF51 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1D1A36168DFD4800D9CB93 /* AdSupport.framework */; };
+		EECABE3A169B4DBC0089AF51 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1D1A36168DFD4800D9CB93 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		EECABE3B169B4DBC0089AF51 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1D1A30168DFCEC00D9CB93 /* StoreKit.framework */; };
 		EECABE3C169B4DBC0089AF51 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1D1A2E168DF65800D9CB93 /* MessageUI.framework */; };
 		EECABE3D169B4DBC0089AF51 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1D1A2C168DF65100D9CB93 /* libsqlite3.dylib */; };
@@ -3940,7 +3940,7 @@
 					"\"../libs/cocos2dx/platform/third_party/ios\"",
 					"\"../libs/cocos2dx/platform/ios\"",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -3967,7 +3967,7 @@
 					"\"../libs/cocos2dx/platform/third_party/ios\"",
 					"\"../libs/cocos2dx/platform/ios\"",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A3D56411-CEBC-4DC3-8C83-155E22BDDC33";
 				SDKROOT = iphoneos;

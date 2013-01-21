@@ -12,14 +12,14 @@ cp AndroidManifest.xml AndroidManifest.xm_
 versionCode=$(printf "android:versionCode=%s%s%s" '"' "$1" '"')
 #set new versionName
 versionName=$(printf "android:versionName=%s%s%s" '"' "$2" '">')
-#replace new versionCode
-sed -e 's/android:versionCode.*/'"$versionCode"'/g' -i "" AndroidManifest.xml 
-#replace new versionName
-sed -e 's/android:versionName.*/'"$versionName"'/g' -i "" AndroidManifest.xml
 
 #遍历当前路径下pack文件夹内的所有文件
 for dir2del in $direc/pack/* ; do
 	cp AndroidManifest.xml.pack AndroidManifest.xml
+	#replace new versionCode
+	sed -e 's/android:versionCode.*/'"$versionCode"'/g' -i "" AndroidManifest.xml 
+	#replace new versionName
+	sed -e 's/android:versionName.*/'"$versionName"'/g' -i "" AndroidManifest.xml
     #file is a directory
     if [ -d $dir2del ]; then
 		#获取文件夹的名称

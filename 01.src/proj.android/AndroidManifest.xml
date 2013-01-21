@@ -85,7 +85,7 @@
         <!-- 友盟 -->
         <meta-data android:value="50e694535270154ec5000003" android:name="UMENG_APPKEY" />
         <!-- 测试 渠道 -->
-        <meta-data android:value="test" android:name="UMENG_CHANNEL"/>
+        <meta-data android:value="91" android:name="UMENG_CHANNEL"/>
 
     </application>
     <supports-screens android:largeScreens="true"
