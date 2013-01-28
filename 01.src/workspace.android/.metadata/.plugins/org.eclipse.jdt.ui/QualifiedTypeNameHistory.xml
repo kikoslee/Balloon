@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="android.os.Bundle"/>
+<fullyQualifiedTypeName name="android.content.IntentFilter"/>
+<fullyQualifiedTypeName name="android.content.BroadcastReceiver"/>
+<fullyQualifiedTypeName name="android.content.Context"/>
+<fullyQualifiedTypeName name="android.content.Intent"/>
+<fullyQualifiedTypeName name="com.happybluefin.android.framework.utility.system.Network"/>
+<fullyQualifiedTypeName name="com.happybluefin.android.framework.utility.thirdpart.rankinglist.ScoreloopSDK"/>
+<fullyQualifiedTypeName name="android.widget.Toast"/>
+<fullyQualifiedTypeName name="android.util.Log"/>
+<fullyQualifiedTypeName name="android.R"/>
+<fullyQualifiedTypeName name="com.happybluefin.android.framework.utility.system.Comment"/>
+<fullyQualifiedTypeName name="com.happybluefin.android.framework.utility.system.Utility"/>
+<fullyQualifiedTypeName name="com.happybluefin.android.framework.store.SharePrefStore"/>
+<fullyQualifiedTypeName name="com.happybluefin.android.framework.utility.system.Desktop"/>
+<fullyQualifiedTypeName name="android.view.KeyEvent"/>
+</qualifiedTypeNameHistroy>

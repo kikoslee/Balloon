@@ -230,8 +230,6 @@ void gotoReview() {
         }
 
         jstring str = (jstring)env->CallStaticObjectMethod(cls, gotoReview);
-
-        ret = jstringTostring(env, str);
     }
 
     LOGD("gotoReview() end");
@@ -268,8 +266,6 @@ void gotoMoreGame()
         }
 
         jstring str = (jstring)env->CallStaticObjectMethod(cls, gotoMoreGame);
-
-        ret = jstringTostring(env, str);
     }
 
     LOGD("gotoMoreGame() end");
@@ -369,6 +365,10 @@ void umengCustomEvent(const char* name, const char* value) {
     }
 
     LOGD("umengCustomEvent() end");
+}
+
+// 购买项目
+void purchaseItem(const char* itemName) {
 }
 
 //获取语言
