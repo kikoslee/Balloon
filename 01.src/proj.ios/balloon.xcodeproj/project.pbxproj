@@ -638,6 +638,9 @@
 		EE30612D16981C0900A6739E /* sounds in Resources */ = {isa = PBXBuildFile; fileRef = EE30612B16981C0900A6739E /* sounds */; };
 		EE58BAB51696BCDB007D3C2D /* DlgQuit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE58BAB11696BB9B007D3C2D /* DlgQuit.cpp */; };
 		EE8936C6168DA2CA007330CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE8936C8168DA2CA007330CA /* InfoPlist.strings */; };
+		EEB8F01F16B286E2007AFF40 /* IAPHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = EEB8F01E16B286E2007AFF40 /* IAPHelper.mm */; };
+		EEB8F02016B286E2007AFF40 /* IAPHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = EEB8F01E16B286E2007AFF40 /* IAPHelper.mm */; };
+		EEB8F02116B286E2007AFF40 /* IAPHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = EEB8F01E16B286E2007AFF40 /* IAPHelper.mm */; };
 		EECABD75169B4DBC0089AF51 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BFA75229167653F300EEE5A8 /* AppController.mm */; };
 		EECABD76169B4DBC0089AF51 /* RootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BFA7522C167653F300EEE5A8 /* RootViewController.mm */; };
 		EECABD77169B4DBC0089AF51 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA7522E167653F300EEE5A8 /* main.m */; };
@@ -1574,6 +1577,8 @@
 		EE8936CA168DA2D1007330CA /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		EE8936CB168DA2D2007330CA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		EE9E28D8168E122200359126 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EEB8F01D16B286E2007AFF40 /* IAPHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAPHelper.h; sourceTree = "<group>"; };
+		EEB8F01E16B286E2007AFF40 /* IAPHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IAPHelper.mm; sourceTree = "<group>"; };
 		EECABEB5169B4DBC0089AF51 /* balloon91.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = balloon91.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EECABEB7169B4DBC0089AF51 /* balloon91.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = balloon91.plist; path = /Users/limin/Documents/Work/TinyGame/02.Balloon/01.src/proj.ios/balloon91.plist; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
@@ -1823,6 +1828,8 @@
 		BFF77A16168415010016B70B /* ios */ = {
 			isa = PBXGroup;
 			children = (
+				EEB8F01D16B286E2007AFF40 /* IAPHelper.h */,
+				EEB8F01E16B286E2007AFF40 /* IAPHelper.mm */,
 				BFF77A17168415010016B70B /* GameCenter */,
 				BFF77A22168415010016B70B /* HBCommon.mm */,
 				BFF77A26168415010016B70B /* libMobClickLibrary.a */,
@@ -3490,6 +3497,7 @@
 				EE1D19C4168DF53000D9CB93 /* JSONKit.m in Sources */,
 				EE1D1A23168DF57600D9CB93 /* BannerAdViewController.mm in Sources */,
 				EE58BAB51696BCDB007D3C2D /* DlgQuit.cpp in Sources */,
+				EEB8F01F16B286E2007AFF40 /* IAPHelper.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3693,6 +3701,7 @@
 				EE1D1AFB168E050300D9CB93 /* MobisageFullScreenAdViewController.m in Sources */,
 				EE1D1AFC168E050300D9CB93 /* JSONKit.m in Sources */,
 				EE1D1AFD168E050300D9CB93 /* BannerAdViewController.mm in Sources */,
+				EEB8F02016B286E2007AFF40 /* IAPHelper.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3896,6 +3905,7 @@
 				EECABE36169B4DBC0089AF51 /* MobisageFullScreenAdViewController.m in Sources */,
 				EECABE37169B4DBC0089AF51 /* JSONKit.m in Sources */,
 				EECABE38169B4DBC0089AF51 /* BannerAdViewController.mm in Sources */,
+				EEB8F02116B286E2007AFF40 /* IAPHelper.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
