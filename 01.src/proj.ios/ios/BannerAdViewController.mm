@@ -16,70 +16,73 @@
 @synthesize adView;
 
 - (void)dealloc {
-    adView.delegate = nil;
-    adView.adWebBrowswerDelegate = nil;
-    [super dealloc];
+	adView.delegate = nil;
+	adView.adWebBrowswerDelegate = nil;
+	
+	adFullView.delegate = nil;
+	adFullView.adWebBrowswerDelegate = nil;
+	[super dealloc];
 }
 
 - (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+	[super didReceiveMemoryWarning];
 }
 
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+	[super viewDidLoad];
 
-    AdViewType type;
-    AdViewType fullType;
-    NSString* key;
-    
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-    {
-        type = AdViewTypeLargeBanner;
-        fullType = AdViewTypeFullScreen;
-        key = [NSString stringWithFormat:@"%s", kAdsMogoKey_iPad];
-    }
-    else
-    {
-        type = AdViewTypeNormalBanner;
-        fullType = AdViewTypeiPadFullScreen;
-        key = [NSString stringWithFormat:@"%s", kAdsMogoKey];
-    }
-    
-    adView = [[AdMoGoView alloc] initWithAppKey:key
-                                         adType:type
-                                    expressMode:YES
-                             adMoGoViewDelegate:self];
-    adView.adWebBrowswerDelegate = self;
-    adView.frame = CGRectZero;
-    [self.view addSubview:adView];
-    [adView release];
-    
-    if (HBUmeng::getParamValue("isAdFullEnable") == 1)
-    {
-        adFullView = [[AdMoGoView alloc] initWithAppKey:key
-                                             adType:fullType
-                                            expressMode:YES
-                                     adMoGoViewDelegate:self];
-        adFullView.adWebBrowswerDelegate = self;
-        adFullView.frame = CGRectZero;
-        [self.view addSubview:adFullView];
-        [adFullView release];
-    }
+	AdViewType type;
+	AdViewType fullType;
+	NSString* key;
+	
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+	{
+		type = AdViewTypeLargeBanner;
+		fullType = AdViewTypeFullScreen;
+		key = [NSString stringWithFormat:@"%s", kAdsMogoKey_iPad];
+	}
+	else
+	{
+		type = AdViewTypeNormalBanner;
+		fullType = AdViewTypeiPadFullScreen;
+		key = [NSString stringWithFormat:@"%s", kAdsMogoKey];
+	}
+	
+	adView = [[AdMoGoView alloc] initWithAppKey:key
+										 adType:type
+									expressMode:NO
+							 adMoGoViewDelegate:self];
+	adView.adWebBrowswerDelegate = self;
+	adView.frame = CGRectZero;
+	[self.view addSubview:adView];
+	[adView release];
+	
+//	if (HBUmeng::getParamValue("isAdFullEnable") == 1)
+	{
+		adFullView = [[AdMoGoView alloc] initWithAppKey:key
+											 adType:fullType
+											expressMode:NO
+									 adMoGoViewDelegate:self];
+		adFullView.adWebBrowswerDelegate = self;
+		adFullView.frame = CGRectZero;
+		[self.view addSubview:adFullView];
+		[adFullView release];
+	}
 }
 
 - (void)viewDidUnload {
-    [super viewDidUnload];
+	[super viewDidUnload];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+	return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 #pragma mark - Ads delegate 
 - (UIViewController *)viewControllerForPresentingModalView {
-    return self;
+	return self;
 }
 
 - (void)adMoGoDidStartAd:(AdMoGoView *)adMoGoView {
@@ -88,11 +91,11 @@
 
 - (void)adMoGoDidReceiveAd:(AdMoGoView *)adMoGoView {
 //    NSLog(@"广告接收成功回调");
-    CGRect bounds = [[UIScreen mainScreen] applicationFrame];
-    CGRect rc = adMoGoView.frame;
-    rc.origin.x = (bounds.size.width - rc.size.width) / 2;
-    rc.origin.y = (bounds.size.height - rc.size.height);
-    adMoGoView.frame = rc;
+	CGRect bounds = [[UIScreen mainScreen] applicationFrame];
+	CGRect rc = adMoGoView.frame;
+	rc.origin.x = (bounds.size.width - rc.size.width) / 2;
+	rc.origin.y = (bounds.size.height - rc.size.height);
+	adMoGoView.frame = rc;
 }
 
 - (void)adMoGoDidFailToReceiveAd:(AdMoGoView *)adMoGoView didFailWithError:(NSError *)error {
@@ -111,22 +114,22 @@
 /*Full Screen Notifications*/
 - (void)adMoGoFullScreenAdReceivedRequest
 {
-    NSLog(@"全屏广告 接收成功");
+	NSLog(@"全屏广告 接收成功");
 }
 
 - (void)adMoGoFullScreenAdFailedWithError:(NSError *) error
 {
-    NSLog(@"全屏广告 接收失败");
+	NSLog(@"全屏广告 接收失败");
 }
 
 - (void)adMoGoWillPresentFullScreenAdModal
 {
-    NSLog(@"全屏广告展示");
+	NSLog(@"全屏广告展示");
 }
 
 - (void)adMoGoDidDismissFullScreenAdModal
 {
-    NSLog(@"全屏广告消失");
+	NSLog(@"全屏广告消失");
 }
 
 #pragma mark - AdMoGoWebBrowserControllerUserDelegate delegate
@@ -148,7 +151,7 @@
 }
 
 - (void)webBrowserShare:(NSString *)url {
-    
+	
 }
 
 @end
